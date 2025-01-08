@@ -20,19 +20,18 @@ func main() {
 	// do not commit to source - use environment variables
 	secret := "your_api_secret"
 
-	// initialize the webhook handler. if you just want to return 500 for errors, use webhook.NewMiddleware(secret, yourHandler) instead
-	middleware := webhook.NewMiddlewareWithErrorHandler(secret, yourHandler, yourErrorHandler)
+	// initialize a webhook handler. if you just want to return 500 for errors, use webhook.NewHandler(secret, yourHandler) instead
+	webhookHandler := webhook.NewHandlerWithErrorHandler(secret, yourHandler, yourErrorHandler)
 	mux := http.NewServeMux()
-	// middleware will validate the request and call your handlers
-	mux.Handle("/webhook", middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {})))
+	// handler will validate the request and process webhooks
+	mux.Handle("/webhook", webhookHandler)
 
 	// from here on it's just a generic http server
-
 	server := &http.Server{
 		Addr:    ":3000",
 		Handler: mux,
 	}
-	
+
 	go func() {
 		log.Printf("Starting server on %s", server.Addr)
 		if err := server.ListenAndServe(); err != http.ErrServerClosed {
@@ -55,7 +54,7 @@ func main() {
 	log.Println("Server stopped")
 }
 
-// used in your middleware function after the request is validated
+// used to process validated webhook requests
 func yourHandler(wh *webhook.UnknownWebhook) error {
 	info, err := wh.GetInfo()
 	if err != nil {
@@ -82,7 +81,9 @@ func yourHandler(wh *webhook.UnknownWebhook) error {
 	return nil
 }
 
-// optionally log your own 500 errors. this will only run for errors returned by your handler. validation errors are automatically handled by the middleware function
+// optionally handle errors from your handler function. if not provided, a default 500 response will be used
+// this specifically runs on *your* callback errors. if there is an error validating the webhook an error will always be returned to the http request
+// you probably only need this if, for example, you're running shadow traffic on a new webhook topic and don't want shopify to flag a million failed webhooks if something goes wrong
 func yourErrorHandler(w http.ResponseWriter, err error) {
 	fmt.Printf("Error: %v\n", err)
 	http.Error(w, "Internal server error", http.StatusInternalServerError)

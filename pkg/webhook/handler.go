@@ -11,12 +11,12 @@ import (
 )
 
 const (
-	shopifyTopicHeader       = "X-Shopify-Topic" // orders/create
+	shopifyTopicHeader       = "X-Shopify-Topic"
 	shopifyChecksumHeader    = "X-Shopify-Hmac-Sha256"
-	shopifyShopDomainHeader  = "X-Shopify-Shop-Domain" // {shop}.myshopify.com
-	shopifyApiVersionHeader  = "X-Shopify-API-Version" // 2025-01
+	shopifyShopDomainHeader  = "X-Shopify-Shop-Domain"
+	shopifyApiVersionHeader  = "X-Shopify-API-Version"
 	shopifyWebhookIdHeader   = "X-Shopify-Webhook-Id"
-	shopifyTriggeredAtHeader = "X-Shopify-Triggered-At" // 2023-03-29T18:00:27.877041743Z
+	shopifyTriggeredAtHeader = "X-Shopify-Triggered-At"
 	shopifyEventIdHeader     = "X-Shopify-Event-Id"
 )
 
@@ -62,49 +62,57 @@ func (e *ValidationError) Error() string {
 	return fmt.Sprintf("Webhook error: %s, code: %s, shop: %s, topic: %s", e.message, e.code, e.shop, e.topic)
 }
 
-type Handler func(webhook *UnknownWebhook) error
+type CallbackHandler func(webhook *UnknownWebhook) error
 type CallbackErrorHandler func(w http.ResponseWriter, err error)
 
-// NewMiddleware creates a handler that validates incoming Shopify webhooks.
-// It accepts an API secret for validating the webhook signature and a handler function
-// for processing the webhook payload. Any errors returned by the handler will default
-// to a 500 Internal Server Error response.
-func NewMiddleware(apiSecret string, handler Handler) func(http.Handler) http.Handler {
-	return NewMiddlewareWithErrorHandler(apiSecret, handler, nil)
+// Handler represents the main handler for Shopify webhooks
+type Handler struct {
+	apiSecret    string
+	handler      CallbackHandler
+	errorHandler CallbackErrorHandler
 }
 
-// NewMiddlewareWithErrorHandler implements NewMiddleware with custom error handling.
-// If errorHandler is nil, errors default to a 500 Internal Server Error response.
-func NewMiddlewareWithErrorHandler(apiSecret string, handler Handler, errorHandler CallbackErrorHandler) func(http.Handler) http.Handler {
+// NewHandler creates a new webhook handler with default error handling
+func NewHandler(apiSecret string, handler CallbackHandler) *Handler {
+	return NewHandlerWithErrorHandler(apiSecret, handler, nil)
+}
+
+// NewHandlerWithErrorHandler creates a new webhook handler with custom error handling
+func NewHandlerWithErrorHandler(apiSecret string, handler CallbackHandler, errorHandler CallbackErrorHandler) *Handler {
 	if errorHandler == nil {
 		errorHandler = func(w http.ResponseWriter, err error) {
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 		}
 	}
 
-	return func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			if r.Method != http.MethodPost {
-				fmt.Println("Method not allowed")
-				http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-				return
-			}
-
-			webhook, err := validateRequest(r, apiSecret)
-			if err != nil {
-				fmt.Printf("Invalid request: %v\n", err.Error())
-				http.Error(w, "Invalid signature", http.StatusUnauthorized)
-				return
-			}
-
-			if err := handler(webhook); err != nil {
-				errorHandler(w, err)
-				return
-			}
-
-			w.WriteHeader(http.StatusOK)
-		})
+	return &Handler{
+		apiSecret:    apiSecret,
+		handler:      handler,
+		errorHandler: errorHandler,
 	}
+}
+
+// ServeHTTP implements the http.Handler interface
+func (wh *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		fmt.Println("Method not allowed")
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	webhook, err := validateRequest(r, wh.apiSecret)
+	if err != nil {
+		fmt.Printf("Invalid request: %v\n", err.Error())
+		http.Error(w, "Invalid signature", http.StatusUnauthorized)
+		return
+	}
+
+	if err := wh.handler(webhook); err != nil {
+		wh.errorHandler(w, err)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
 }
 
 func validateRequest(httpRequest *http.Request, shopifyApiSecret string) (*UnknownWebhook, error) {

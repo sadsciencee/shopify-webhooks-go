@@ -49,14 +49,14 @@ func WebhookHelper(t *testing.T, topic webhook.Topic, tc CallbackForTestUtil, in
 		return nil
 	}
 
-	callbackErrorHandler := func(w http.ResponseWriter, err error) {
+	errorHandler := func(w http.ResponseWriter, err error) {
 		fmt.Printf("Error: %v\n", err)
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 	}
 
-	middleware := webhook.NewMiddlewareWithErrorHandler(secret, handler, callbackErrorHandler)
+	webhookHandler := webhook.NewHandlerWithErrorHandler(secret, handler, errorHandler)
 	mux := http.NewServeMux()
-	mux.Handle("/webhook", middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {})))
+	mux.Handle("/webhook", webhookHandler)
 
 	server := &http.Server{
 		Addr:    addr,
