@@ -1,0 +1,7 @@
+{
+    "creationDate": "2005-05-05T04:00:00.000Z",
+    "id": 1,
+    "lastEditDate": "2022-01-01T00:00:00.000Z",
+    "name": "Customers who have one order",
+    "query": "number_of_orders = 1"
+}

@@ -1,0 +1,9 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Return/123134564567890",
+    "decline": {
+        "note": "As discussed on the phone, the 30-day return window has ended.",
+        "reason": "return_period_ended"
+    },
+    "id": 123134564567890,
+    "status": "declined"
+}

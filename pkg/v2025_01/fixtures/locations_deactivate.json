@@ -1,0 +1,19 @@
+{
+    "active": true,
+    "address1": "34 Example Street",
+    "address2": "Next to example",
+    "admin_graphql_api_id": "gid://shopify/Location/866550311766439020",
+    "city": "ottawa",
+    "country": "CA",
+    "country_code": "CA",
+    "country_name": "Canada",
+    "created_at": "2021-12-31T19:00:00-05:00",
+    "id": 866550311766439000,
+    "legacy": false,
+    "name": "Example Shop",
+    "phone": "555-555-5555",
+    "province": "ontario",
+    "province_code": "ON",
+    "updated_at": "2021-12-31T19:00:00-05:00",
+    "zip": "k1n5t5"
+}

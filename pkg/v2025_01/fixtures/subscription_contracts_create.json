@@ -1,0 +1,21 @@
+{
+    "admin_graphql_api_customer_id": "gid://shopify/Customer/1",
+    "admin_graphql_api_id": "gid://shopify/SubscriptionContract/8193168307",
+    "admin_graphql_api_origin_order_id": "gid://shopify/Order/1",
+    "billing_policy": {
+        "interval": "week",
+        "interval_count": 4,
+        "max_cycles": 2,
+        "min_cycles": 1
+    },
+    "currency_code": "USD",
+    "customer_id": 1,
+    "delivery_policy": {
+        "interval": "week",
+        "interval_count": 2
+    },
+    "id": 8193168307,
+    "origin_order_id": 1,
+    "revision_id": "618283981",
+    "status": "active"
+}

@@ -1,0 +1,10 @@
+{
+    "host": "jsmith.myshopify.com",
+    "id": 690933842,
+    "localization": {
+        "alternate_locales": [],
+        "country": null,
+        "default_locale": "en"
+    },
+    "ssl_enabled": true
+}

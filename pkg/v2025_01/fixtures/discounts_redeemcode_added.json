@@ -1,0 +1,8 @@
+{
+    "admin_graphql_api_id": "gid://shopify/DiscountCodeNode/1",
+    "redeem_code": {
+        "code": "code1",
+        "id": "gid://shopify/DiscountRedeemCode/1"
+    },
+    "updated_at": "2018-08-29T16:00:00.000Z"
+}

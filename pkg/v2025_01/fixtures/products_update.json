@@ -1,0 +1,78 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Product/788032119674292922",
+    "body_html": "An example T-Shirt",
+    "category": null,
+    "created_at": null,
+    "handle": "example-t-shirt",
+    "has_variants_that_requires_components": false,
+    "id": 788032119674292900,
+    "image": null,
+    "images": [],
+    "media": [],
+    "options": [],
+    "product_type": "Shirts",
+    "published_at": "2021-12-31T19:00:00-05:00",
+    "published_scope": "web",
+    "status": "active",
+    "tags": "example, mens, t-shirt",
+    "template_suffix": null,
+    "title": "Example T-Shirt",
+    "updated_at": "2021-12-31T19:00:00-05:00",
+    "variant_gids": [
+        {
+            "admin_graphql_api_id": "gid://shopify/ProductVariant/757650484644203962",
+            "updated_at": "2022-01-01T00:00:00.000Z"
+        },
+        {
+            "admin_graphql_api_id": "gid://shopify/ProductVariant/642667041472713922",
+            "updated_at": "2021-12-31T00:00:00.000Z"
+        }
+    ],
+    "variants": [
+        {
+            "admin_graphql_api_id": "gid://shopify/ProductVariant/642667041472713922",
+            "barcode": null,
+            "compare_at_price": "24.99",
+            "created_at": "2021-12-29T19:00:00-05:00",
+            "id": 642667041472714000,
+            "image_id": null,
+            "inventory_item_id": null,
+            "inventory_policy": "deny",
+            "inventory_quantity": 75,
+            "old_inventory_quantity": 75,
+            "option1": "Small",
+            "option2": null,
+            "option3": null,
+            "position": 1,
+            "price": "19.99",
+            "product_id": 788032119674292900,
+            "sku": null,
+            "taxable": true,
+            "title": "Small",
+            "updated_at": "2021-12-30T19:00:00-05:00"
+        },
+        {
+            "admin_graphql_api_id": "gid://shopify/ProductVariant/757650484644203962",
+            "barcode": null,
+            "compare_at_price": "24.99",
+            "created_at": "2021-12-29T19:00:00-05:00",
+            "id": 757650484644203900,
+            "image_id": null,
+            "inventory_item_id": null,
+            "inventory_policy": "deny",
+            "inventory_quantity": 50,
+            "old_inventory_quantity": 50,
+            "option1": "Medium",
+            "option2": null,
+            "option3": null,
+            "position": 2,
+            "price": "19.99",
+            "product_id": 788032119674292900,
+            "sku": null,
+            "taxable": true,
+            "title": "Medium",
+            "updated_at": "2021-12-31T19:00:00-05:00"
+        }
+    ],
+    "vendor": "Acme"
+}

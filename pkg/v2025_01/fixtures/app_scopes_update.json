@@ -1,0 +1,11 @@
+{
+    "current": [
+        "read_products",
+        "write_products"
+    ],
+    "id": 1,
+    "previous": [
+        "read_products"
+    ],
+    "updated_at": "2024-06-25T00:00:00.000Z"
+}

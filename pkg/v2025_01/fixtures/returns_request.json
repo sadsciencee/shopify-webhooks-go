@@ -1,0 +1,15 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Return/123134564567890",
+    "exchange_line_items": [],
+    "id": 123134564567890,
+    "name": null,
+    "order": {
+        "admin_graphql_api_id": "gid://shopify/Order/4783296544821",
+        "id": 4783296544821
+    },
+    "return_line_items": [],
+    "return_shipping_fees": [],
+    "status": "requested",
+    "total_exchange_line_items": 0,
+    "total_return_line_items": 0
+}

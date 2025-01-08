@@ -1,0 +1,19 @@
+{
+    "admin_graphql_api_id": "gid://shopify/ReverseDelivery/9080907654321",
+    "id": 9080907654321,
+    "return": {
+        "admin_graphql_api_id": "gid://shopify/Return/123134564567890",
+        "id": 123134564567890
+    },
+    "shipping_deliverable": {
+        "label": {
+            "created_at": null,
+            "public_file_url": null
+        },
+        "tracking": {
+            "carrier_name": "USPS",
+            "tracking_number": "123345345",
+            "tracking_url": null
+        }
+    }
+}

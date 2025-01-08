@@ -1,0 +1,19 @@
+{
+    "capabilities": {
+        "publishable": {
+            "status": "draft"
+        }
+    },
+    "created_at": "1975-10-31T00:55:12-05:00",
+    "created_by_app_id": "gid://shopify/ApiClient/333",
+    "created_by_staff_id": "gid://shopify/StaffMember/444",
+    "definition_id": "gid://shopify/MetaobjectDefinition/222",
+    "display_name": "Example Metaobject",
+    "fields": {
+        "example-key": "example-value"
+    },
+    "handle": "example-metaobject",
+    "id": "gid://shopify/Metaobject/123",
+    "type": "example-type",
+    "updated_at": "1985-07-13T01:55:12-04:00"
+}

@@ -1,0 +1,8 @@
+{
+    "customerId": "gid://shopify/Customer/1",
+    "occurredAt": "2005-05-05T04:00:00.000Z",
+    "tags": [
+        "tag1",
+        "tag2"
+    ]
+}

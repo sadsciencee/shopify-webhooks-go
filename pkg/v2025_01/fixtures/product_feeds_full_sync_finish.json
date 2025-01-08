@@ -1,0 +1,23 @@
+{
+    "fullSync": {
+        "count": 12,
+        "createdAt": "2021-12-31 19:00:00 -0500",
+        "errorCode": null,
+        "status": "completed",
+        "url": null
+    },
+    "metadata": {
+        "action": "CREATE",
+        "fullSyncId": "gid://shopify/ProductFullSync/1123511235",
+        "occurred_at": "2022-01-01T00:00:00.000Z",
+        "resource": "PRODUCT",
+        "truncatedFields": [],
+        "type": "FULL"
+    },
+    "productFeed": {
+        "country": "CA",
+        "id": "gid://shopify/ProductFeed/12345",
+        "language": "EN",
+        "shop_id": "gid://shopify/Shop/12345"
+    }
+}

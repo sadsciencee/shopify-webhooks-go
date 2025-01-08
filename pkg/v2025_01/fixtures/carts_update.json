@@ -1,0 +1,80 @@
+{
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "id": "eeafa272cebfd4b22385bc4b645e762c",
+    "line_items": [
+        {
+            "discounted_price": "19.99",
+            "discounted_price_set": {
+                "presentment_money": {
+                    "amount": "19.99",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "19.99",
+                    "currency_code": "USD"
+                }
+            },
+            "discounts": [],
+            "gift_card": false,
+            "grams": 200,
+            "id": 704912205188288500,
+            "key": "704912205188288575:33f11f7a1ec7d93b826de33bb54de37b",
+            "line_price": "59.97",
+            "line_price_set": {
+                "presentment_money": {
+                    "amount": "59.97",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "59.97",
+                    "currency_code": "USD"
+                }
+            },
+            "original_line_price": "59.97",
+            "original_line_price_set": {
+                "presentment_money": {
+                    "amount": "59.97",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "59.97",
+                    "currency_code": "USD"
+                }
+            },
+            "original_price": "19.99",
+            "price": "19.99",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "19.99",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "19.99",
+                    "currency_code": "USD"
+                }
+            },
+            "product_id": 788032119674292900,
+            "properties": {},
+            "quantity": 3,
+            "sku": "example-shirt-s",
+            "taxable": true,
+            "title": "Example T-Shirt - Small",
+            "total_discount": "0.00",
+            "total_discount_set": {
+                "presentment_money": {
+                    "amount": "0.0",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "0.0",
+                    "currency_code": "USD"
+                }
+            },
+            "variant_id": 704912205188288500,
+            "vendor": "Acme"
+        }
+    ],
+    "note": null,
+    "token": "eeafa272cebfd4b22385bc4b645e762c",
+    "updated_at": "2022-01-01T00:00:00.000Z"
+}

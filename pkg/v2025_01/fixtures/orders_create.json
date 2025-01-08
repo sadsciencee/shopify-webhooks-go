@@ -1,0 +1,433 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Order/820982911946154508",
+    "app_id": null,
+    "billing_address": {
+        "address1": "123 Shipping Street",
+        "address2": null,
+        "city": "Shippington",
+        "company": "Shipping Company",
+        "country": "United States",
+        "country_code": "US",
+        "first_name": "Steve",
+        "last_name": "Shipper",
+        "latitude": null,
+        "longitude": null,
+        "name": "Steve Shipper",
+        "phone": "555-555-SHIP",
+        "province": "Kentucky",
+        "province_code": "KY",
+        "zip": "40003"
+    },
+    "browser_ip": null,
+    "buyer_accepts_marketing": true,
+    "cancel_reason": "customer",
+    "cancelled_at": "2021-12-31T19:00:00-05:00",
+    "cart_token": null,
+    "checkout_id": null,
+    "checkout_token": null,
+    "client_details": null,
+    "closed_at": null,
+    "confirmation_number": null,
+    "confirmed": false,
+    "contact_email": "jon@example.com",
+    "created_at": "2021-12-31T19:00:00-05:00",
+    "currency": "USD",
+    "current_shipping_price_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "current_subtotal_price": "398.00",
+    "current_subtotal_price_set": {
+        "presentment_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        }
+    },
+    "current_total_additional_fees_set": null,
+    "current_total_discounts": "0.00",
+    "current_total_discounts_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "current_total_duties_set": null,
+    "current_total_price": "398.00",
+    "current_total_price_set": {
+        "presentment_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        }
+    },
+    "current_total_tax": "0.00",
+    "current_total_tax_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "customer": {
+        "admin_graphql_api_id": "gid://shopify/Customer/115310627314723954",
+        "created_at": null,
+        "currency": "USD",
+        "default_address": {
+            "address1": "123 Elm St.",
+            "address2": null,
+            "city": "Ottawa",
+            "company": null,
+            "country": "Canada",
+            "country_code": "CA",
+            "country_name": "Canada",
+            "customer_id": 115310627314723950,
+            "default": true,
+            "first_name": null,
+            "id": 715243470612851200,
+            "last_name": null,
+            "name": "",
+            "phone": "123-123-1234",
+            "province": "Ontario",
+            "province_code": "ON",
+            "zip": "K2H7A8"
+        },
+        "email": "john@example.com",
+        "first_name": "John",
+        "id": 115310627314723950,
+        "last_name": "Smith",
+        "multipass_identifier": null,
+        "note": null,
+        "phone": null,
+        "state": "disabled",
+        "tax_exempt": false,
+        "tax_exemptions": [],
+        "updated_at": null,
+        "verified_email": true
+    },
+    "customer_locale": "en",
+    "device_id": null,
+    "discount_applications": [],
+    "discount_codes": [],
+    "duties_included": false,
+    "email": "jon@example.com",
+    "estimated_taxes": false,
+    "financial_status": "voided",
+    "fulfillment_status": null,
+    "fulfillments": [],
+    "id": 820982911946154500,
+    "landing_site": null,
+    "landing_site_ref": null,
+    "line_items": [
+        {
+            "admin_graphql_api_id": "gid://shopify/LineItem/866550311766439020",
+            "attributed_staffs": [
+                {
+                    "id": "gid://shopify/StaffMember/902541635",
+                    "quantity": 1
+                }
+            ],
+            "current_quantity": 1,
+            "discount_allocations": [],
+            "duties": [],
+            "fulfillable_quantity": 1,
+            "fulfillment_service": "manual",
+            "fulfillment_status": null,
+            "gift_card": false,
+            "grams": 567,
+            "id": 866550311766439000,
+            "name": "IPod Nano - 8GB",
+            "price": "199.00",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                }
+            },
+            "product_exists": true,
+            "product_id": 632910392,
+            "properties": [],
+            "quantity": 1,
+            "requires_shipping": true,
+            "sales_line_item_group_id": null,
+            "sku": "IPOD2008PINK",
+            "tax_lines": [],
+            "taxable": true,
+            "title": "IPod Nano - 8GB",
+            "total_discount": "0.00",
+            "total_discount_set": {
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "variant_id": 808950810,
+            "variant_inventory_management": "shopify",
+            "variant_title": null,
+            "vendor": null
+        },
+        {
+            "admin_graphql_api_id": "gid://shopify/LineItem/141249953214522974",
+            "attributed_staffs": [],
+            "current_quantity": 1,
+            "discount_allocations": [],
+            "duties": [],
+            "fulfillable_quantity": 1,
+            "fulfillment_service": "manual",
+            "fulfillment_status": null,
+            "gift_card": false,
+            "grams": 567,
+            "id": 141249953214522980,
+            "name": "IPod Nano - 8GB",
+            "price": "199.00",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                }
+            },
+            "product_exists": true,
+            "product_id": 632910392,
+            "properties": [],
+            "quantity": 1,
+            "requires_shipping": true,
+            "sales_line_item_group_id": null,
+            "sku": "IPOD2008PINK",
+            "tax_lines": [],
+            "taxable": true,
+            "title": "IPod Nano - 8GB",
+            "total_discount": "0.00",
+            "total_discount_set": {
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "variant_id": 808950810,
+            "variant_inventory_management": "shopify",
+            "variant_title": null,
+            "vendor": null
+        }
+    ],
+    "location_id": null,
+    "merchant_business_entity_id": "MTU0ODM4MDAwOQ",
+    "merchant_of_record_app_id": null,
+    "name": "#9999",
+    "note": null,
+    "note_attributes": [],
+    "number": 234,
+    "order_number": 1234,
+    "order_status_url": "https://jsmith.myshopify.com/548380009/orders/123456abcd/authenticate?key=abcdefg",
+    "original_total_additional_fees_set": null,
+    "original_total_duties_set": null,
+    "payment_gateway_names": [
+        "visa",
+        "bogus"
+    ],
+    "payment_terms": null,
+    "phone": null,
+    "po_number": null,
+    "presentment_currency": "USD",
+    "processed_at": "2021-12-31T19:00:00-05:00",
+    "reference": null,
+    "referring_site": null,
+    "refunds": [],
+    "returns": [],
+    "shipping_address": {
+        "address1": "123 Shipping Street",
+        "address2": null,
+        "city": "Shippington",
+        "company": "Shipping Company",
+        "country": "United States",
+        "country_code": "US",
+        "first_name": "Steve",
+        "last_name": "Shipper",
+        "latitude": null,
+        "longitude": null,
+        "name": "Steve Shipper",
+        "phone": "555-555-SHIP",
+        "province": "Kentucky",
+        "province_code": "KY",
+        "zip": "40003"
+    },
+    "shipping_lines": [
+        {
+            "carrier_identifier": null,
+            "code": null,
+            "current_discounted_price_set": {
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "discount_allocations": [],
+            "discounted_price": "10.00",
+            "discounted_price_set": {
+                "presentment_money": {
+                    "amount": "10.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "10.00",
+                    "currency_code": "USD"
+                }
+            },
+            "id": 271878346596884000,
+            "is_removed": false,
+            "phone": null,
+            "price": "10.00",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "10.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "10.00",
+                    "currency_code": "USD"
+                }
+            },
+            "requested_fulfillment_service_id": null,
+            "source": "shopify",
+            "tax_lines": [],
+            "title": "Generic Shipping"
+        }
+    ],
+    "source_identifier": null,
+    "source_name": "web",
+    "source_url": null,
+    "subtotal_price": "388.00",
+    "subtotal_price_set": {
+        "presentment_money": {
+            "amount": "388.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "388.00",
+            "currency_code": "USD"
+        }
+    },
+    "tags": "tag1, tag2",
+    "tax_exempt": false,
+    "tax_lines": [],
+    "taxes_included": false,
+    "test": true,
+    "token": "123456abcd",
+    "total_cash_rounding_payment_adjustment_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_cash_rounding_refund_adjustment_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_discounts": "20.00",
+    "total_discounts_set": {
+        "presentment_money": {
+            "amount": "20.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "20.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_line_items_price": "398.00",
+    "total_line_items_price_set": {
+        "presentment_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "398.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_outstanding": "398.00",
+    "total_price": "388.00",
+    "total_price_set": {
+        "presentment_money": {
+            "amount": "388.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "388.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_shipping_price_set": {
+        "presentment_money": {
+            "amount": "10.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "10.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_tax": "0.00",
+    "total_tax_set": {
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_tip_received": "0.00",
+    "total_weight": 0,
+    "updated_at": "2021-12-31T19:00:00-05:00",
+    "user_id": null
+}

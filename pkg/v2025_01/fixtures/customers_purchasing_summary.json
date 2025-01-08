@@ -1,0 +1,10 @@
+{
+    "amountSpent": {
+        "amount": "100.00",
+        "currencyCode": "USD"
+    },
+    "customerId": "gid://shopify/Customer/1",
+    "lastOrderId": "gid://shopify/Order/1",
+    "numberOfOrders": 1,
+    "occurredAt": "2005-05-05T04:00:00.000Z"
+}

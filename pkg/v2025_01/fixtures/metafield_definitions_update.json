@@ -1,0 +1,21 @@
+{
+    "access": "unrestricted",
+    "admin_filter_status": "not_filterable",
+    "api_client_id": null,
+    "created_at": null,
+    "deleting": false,
+    "description": null,
+    "id": null,
+    "key": "example-key",
+    "name": "Example Field",
+    "namespace": "example-type",
+    "options": [],
+    "owner_type": "Customer",
+    "pinned_position": 0,
+    "shop_id": 548380009,
+    "standard_template_id": null,
+    "type_name": "single_line_text_field",
+    "updated_at": null,
+    "use_as_collection_condition": false,
+    "validation_status": "all_valid"
+}

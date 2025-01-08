@@ -1,0 +1,36 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Return/123134564567890",
+    "exchange_line_items": [
+        {
+            "admin_graphql_api_id": "gid://shopify/ExchangeLineItem/987654321283476",
+            "id": 987654321283476,
+            "line_item": null
+        }
+    ],
+    "id": 123134564567890,
+    "name": null,
+    "order": {
+        "admin_graphql_api_id": "gid://shopify/Order/4783296544821",
+        "id": 4783296544821
+    },
+    "return_line_items": [],
+    "return_shipping_fees": [
+        {
+            "admin_graphql_api_id": "gid://shopify/ReturnShippingFee/987654321547866",
+            "id": 987654321547866,
+            "price": {
+                "presentment_money": {
+                    "amount": "10.0",
+                    "currency_code": "XXX"
+                },
+                "shop_money": {
+                    "amount": "10.0",
+                    "currency_code": "XXX"
+                }
+            }
+        }
+    ],
+    "status": "open",
+    "total_exchange_line_items": 1,
+    "total_return_line_items": 0
+}

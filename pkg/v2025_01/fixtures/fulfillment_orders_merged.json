@@ -1,0 +1,28 @@
+{
+    "fulfillment_order_merges": {
+        "fulfillment_order": {
+            "id": "gid://shopify/FulfillmentOrder/1",
+            "status": "open"
+        }
+    },
+    "merge_intents": [
+        {
+            "fulfillment_order_id": 1,
+            "fulfillment_order_line_items": [
+                {
+                    "id": 1,
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "fulfillment_order_id": 2,
+            "fulfillment_order_line_items": [
+                {
+                    "id": 2,
+                    "quantity": 1
+                }
+            ]
+        }
+    ]
+}

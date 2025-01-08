@@ -1,0 +1,14 @@
+{
+    "amount": "11.50",
+    "currency": "CAD",
+    "evidence_due_by": "2021-12-30T19:00:00-05:00",
+    "evidence_sent_on": null,
+    "finalized_on": null,
+    "id": 285332461850802050,
+    "initiated_at": "2021-12-31T19:00:00-05:00",
+    "network_reason_code": "4837",
+    "order_id": 820982911946154500,
+    "reason": "fraudulent",
+    "status": "under_review",
+    "type": "chargeback"
+}

@@ -1,0 +1,6 @@
+{
+    "customer_accounts_version": "classic",
+    "login_links_visible_on_storefront_and_checkout": true,
+    "login_required_at_checkout": true,
+    "url": null
+}

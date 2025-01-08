@@ -1,0 +1,12 @@
+{
+    "amount": "403.00",
+    "currency": "USD",
+    "id": 220982911946154500,
+    "order_id": 820982911946154500,
+    "payment_details": null,
+    "payment_method": "unknown",
+    "processed_at": null,
+    "remote_reference": "1001",
+    "test": false,
+    "user_id": null
+}

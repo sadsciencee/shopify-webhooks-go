@@ -1,0 +1,48 @@
+{
+    "created_fulfillment_hold": {
+        "handle": "example-hold-1",
+        "held_by_app": {
+            "id": "gid://shopify/App/12345"
+        },
+        "held_by_requesting_app": false,
+        "id": "gid://shopify/FulfillmentHold/1",
+        "reason": "other",
+        "reason_notes": "example"
+    },
+    "fulfillment_order": {
+        "fulfillment_holds": [
+            {
+                "handle": "example-hold-1",
+                "held_by_app": {
+                    "id": "gid://shopify/App/12345"
+                },
+                "held_by_requesting_app": false,
+                "id": "gid://shopify/FulfillmentHold/1",
+                "reason": "other",
+                "reason_notes": "example"
+            },
+            {
+                "handle": "example-hold-2",
+                "held_by_app": {
+                    "id": "gid://shopify/App/12345"
+                },
+                "held_by_requesting_app": false,
+                "id": "gid://shopify/FulfillmentHold/2",
+                "reason": "inventory_out_of_stock",
+                "reason_notes": "Stacked hold"
+            }
+        ],
+        "id": "gid://shopify/FulfillmentOrder/1",
+        "status": "on_hold"
+    },
+    "held_fulfillment_order_line_items": [
+        {
+            "id": "gid://shopify/FulfillmentOrderLineItem/3",
+            "quantity": 4
+        }
+    ],
+    "remaining_fulfillment_order": {
+        "id": "gid://shopify/FulfillmentOrder/2",
+        "status": "open"
+    }
+}

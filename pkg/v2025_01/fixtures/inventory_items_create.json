@@ -1,0 +1,14 @@
+{
+    "admin_graphql_api_id": "gid://shopify/InventoryItem/271878346596884015",
+    "cost": null,
+    "country_code_of_origin": null,
+    "country_harmonized_system_codes": [],
+    "created_at": "2021-12-31T19:00:00-05:00",
+    "harmonized_system_code": null,
+    "id": 271878346596884000,
+    "province_code_of_origin": null,
+    "requires_shipping": true,
+    "sku": "example-sku",
+    "tracked": true,
+    "updated_at": "2021-12-31T19:00:00-05:00"
+}

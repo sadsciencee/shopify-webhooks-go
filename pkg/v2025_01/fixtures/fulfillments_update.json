@@ -1,0 +1,166 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Fulfillment/123456",
+    "created_at": "2021-12-31T19:00:00-05:00",
+    "destination": {
+        "address1": "123 Shipping Street",
+        "address2": null,
+        "city": "Shippington",
+        "company": "Shipping Company",
+        "country": "United States",
+        "country_code": "US",
+        "first_name": "Steve",
+        "last_name": "Shipper",
+        "latitude": null,
+        "longitude": null,
+        "name": "Steve Shipper",
+        "phone": "555-555-SHIP",
+        "province": "Kentucky",
+        "province_code": "KY",
+        "zip": "40003"
+    },
+    "email": "jon@example.com",
+    "id": 123456,
+    "line_items": [
+        {
+            "admin_graphql_api_id": "gid://shopify/LineItem/866550311766439020",
+            "discount_allocations": [],
+            "duties": [],
+            "fulfillable_quantity": 1,
+            "fulfillment_service": "manual",
+            "fulfillment_status": null,
+            "gift_card": false,
+            "grams": 567,
+            "id": 866550311766439000,
+            "name": "IPod Nano - 8GB",
+            "price": "199.00",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                }
+            },
+            "product_exists": true,
+            "product_id": 632910392,
+            "properties": [],
+            "quantity": 1,
+            "requires_shipping": true,
+            "sku": "IPOD2008PINK",
+            "tax_lines": [],
+            "taxable": true,
+            "title": "IPod Nano - 8GB",
+            "total_discount": "0.00",
+            "total_discount_set": {
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "variant_id": 808950810,
+            "variant_inventory_management": "shopify",
+            "variant_title": null,
+            "vendor": null
+        },
+        {
+            "admin_graphql_api_id": "gid://shopify/LineItem/141249953214522974",
+            "discount_allocations": [
+                {
+                    "amount": "5.00",
+                    "amount_set": {
+                        "presentment_money": {
+                            "amount": "5.00",
+                            "currency_code": "USD"
+                        },
+                        "shop_money": {
+                            "amount": "5.00",
+                            "currency_code": "USD"
+                        }
+                    },
+                    "discount_application_index": 0
+                },
+                {
+                    "amount": "5.00",
+                    "amount_set": {
+                        "presentment_money": {
+                            "amount": "5.00",
+                            "currency_code": "USD"
+                        },
+                        "shop_money": {
+                            "amount": "5.00",
+                            "currency_code": "USD"
+                        }
+                    },
+                    "discount_application_index": 2
+                }
+            ],
+            "duties": [],
+            "fulfillable_quantity": 1,
+            "fulfillment_service": "manual",
+            "fulfillment_status": null,
+            "gift_card": false,
+            "grams": 567,
+            "id": 141249953214522980,
+            "name": "IPod Nano - 8GB",
+            "price": "199.00",
+            "price_set": {
+                "presentment_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "199.00",
+                    "currency_code": "USD"
+                }
+            },
+            "product_exists": true,
+            "product_id": 632910392,
+            "properties": [],
+            "quantity": 1,
+            "requires_shipping": true,
+            "sku": "IPOD2008PINK",
+            "tax_lines": [],
+            "taxable": true,
+            "title": "IPod Nano - 8GB",
+            "total_discount": "5.00",
+            "total_discount_set": {
+                "presentment_money": {
+                    "amount": "5.00",
+                    "currency_code": "USD"
+                },
+                "shop_money": {
+                    "amount": "5.00",
+                    "currency_code": "USD"
+                }
+            },
+            "variant_id": 808950810,
+            "variant_inventory_management": "shopify",
+            "variant_title": null,
+            "vendor": null
+        }
+    ],
+    "location_id": null,
+    "name": "#9999.1",
+    "order_id": 820982911946154500,
+    "origin_address": null,
+    "receipt": {},
+    "service": null,
+    "shipment_status": null,
+    "status": "pending",
+    "tracking_company": "UPS",
+    "tracking_number": "1z827wk74630",
+    "tracking_numbers": [
+        "1z827wk74630"
+    ],
+    "tracking_url": "https://www.ups.com/WebTracking?loc=en_US\u0026requester=ST\u0026trackNums=1z827wk74630",
+    "tracking_urls": [
+        "https://www.ups.com/WebTracking?loc=en_US\u0026requester=ST\u0026trackNums=1z827wk74630"
+    ],
+    "updated_at": "2021-12-31T19:00:00-05:00"
+}

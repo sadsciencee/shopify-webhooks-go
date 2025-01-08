@@ -1,0 +1,50 @@
+{
+    "events": [
+        {
+            "event": {
+                "action": "api_request",
+                "actor": {
+                    "actor_identifier": 4,
+                    "actor_metadata": {
+                        "api_version_requested": "unstable",
+                        "api_version_served": "unstable",
+                        "app_name": "Private app",
+                        "ecosystem_category": "private"
+                    },
+                    "actor_type": "app",
+                    "on_behalf_of": {
+                        "user_email": "dev@example.com"
+                    }
+                },
+                "additional_metadata": {
+                    "error_codes": [],
+                    "mutation_names": [],
+                    "query": "query orders {\n  orders(first: $first) {\n    edges {\n      node {\n        id\n      }\n    }\n  }\n}",
+                    "request_type": "GraphQL",
+                    "variables": {
+                        "first": 10
+                    }
+                },
+                "context": {
+                    "context_identifier": "13493be9-24f2-4eea-b71d-a8acd7af7917",
+                    "context_metadata": {
+                        "api_request_failed": false,
+                        "client_ip": "192.168.64.1",
+                        "content_type": "json",
+                        "response_code": 200,
+                        "response_time_ms": 116.47000000812113,
+                        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36"
+                    },
+                    "context_type": "network_request"
+                },
+                "subject": {
+                    "subject_identifier": "shop1.myshopify.io",
+                    "subject_metadata": {},
+                    "subject_type": "shop"
+                },
+                "timestamp": "2021-10-19T21:25:24Z"
+            },
+            "time": 1634678724
+        }
+    ]
+}

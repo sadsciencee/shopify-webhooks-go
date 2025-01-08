@@ -1,0 +1,14 @@
+{
+    "customer": {
+        "email": "john@example.com",
+        "id": 191167,
+        "phone": "555-625-1199"
+    },
+    "orders_to_redact": [
+        299938,
+        280263,
+        220458
+    ],
+    "shop_domain": "{shop}.myshopify.com",
+    "shop_id": 954889
+}

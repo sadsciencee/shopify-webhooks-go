@@ -1,0 +1,14 @@
+{
+    "buyer_accepts_sms_marketing": false,
+    "cart_token": "eeafa272cebfd4b22385bc4b645e762c",
+    "id": 981820079255243500,
+    "presentment_currency": "USD",
+    "reservation_token": null,
+    "sms_marketing_phone": null,
+    "subtotal_price": "398.00",
+    "total_discounts": "0.00",
+    "total_duties": null,
+    "total_line_items_price": "398.00",
+    "total_price": "421.88",
+    "total_tax": "23.88"
+}

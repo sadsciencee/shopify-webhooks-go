@@ -1,0 +1,19 @@
+{
+    "admin_graphql_api_id": "gid://shopify/Return/123134564567890",
+    "restocking_fees": {
+        "removals": [],
+        "updates": []
+    },
+    "return_line_items": {
+        "removals": [
+            {
+                "admin_graphql_api_id": "gid://shopify/ReturnLineItem/987654321",
+                "delta": 2
+            }
+        ]
+    },
+    "return_shipping_fees": {
+        "removals": [],
+        "updates": []
+    }
+}

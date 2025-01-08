@@ -1,0 +1,33 @@
+{
+    "admin_graphql_api_id": "gid://shopify/ReverseFulfillmentOrder/11111111",
+    "dispositions": [
+        {
+            "location": {
+                "admin_graphql_api_id": "gid://shopify/Location/3333333",
+                "id": 3333333
+            },
+            "quantity": 1,
+            "reverse_delivery_line_item": null,
+            "reverse_fulfillment_order_line_item": {
+                "admin_graphql_api_id": "gid://shopify/ReverseFulfillmentOrderLineItem/2222222",
+                "id": 2222222
+            },
+            "type": "restocked"
+        },
+        {
+            "location": {
+                "admin_graphql_api_id": "gid://shopify/Location/3333333",
+                "id": 3333333
+            },
+            "quantity": 1,
+            "reverse_delivery_line_item": null,
+            "reverse_fulfillment_order_line_item": {
+                "admin_graphql_api_id": "gid://shopify/ReverseFulfillmentOrderLineItem/2222223",
+                "id": 2222223
+            },
+            "type": "restocked"
+        }
+    ],
+    "id": 11111111,
+    "total_dispositions": 2
+}

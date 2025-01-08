@@ -1,0 +1,10 @@
+{
+    "enabled": true,
+    "id": 188558248,
+    "name": "United States",
+    "regions": [
+        {
+            "country_code": "US"
+        }
+    ]
+}
