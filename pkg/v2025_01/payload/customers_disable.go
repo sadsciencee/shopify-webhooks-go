@@ -42,7 +42,7 @@ func (webhook *CustomersDisable) GetData() (CustomersDisablePayload, error) {
 
 type CustomersDisablePayload struct {
 	Addresses           []interface{}                   `json:"addresses"`
-	AdminGraphqlAPIID   string                          `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID   shopify.ID                      `json:"admin_graphql_api_id"`
 	CreatedAt           time.Time                       `json:"created_at"`
 	Currency            string                          `json:"currency"`
 	DefaultAddress      *shopify.CustomerDefaultAddress `json:"default_address"`

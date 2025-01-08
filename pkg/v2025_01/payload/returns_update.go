@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,15 +40,15 @@ func (webhook *ReturnsUpdate) GetData() (ReturnsUpdatePayload, error) {
 }
 
 type ReturnsUpdatePayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	RestockingFees    struct {
 		Removals []interface{} `json:"removals"`
 		Updates  []interface{} `json:"updates"`
 	} `json:"restocking_fees"`
 	ReturnLineItems struct {
 		Removals []struct {
-			AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
-			Delta             int64  `json:"delta"`
+			AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+			Delta             int64      `json:"delta"`
 		} `json:"removals"`
 	} `json:"return_line_items"`
 	ReturnShippingFees struct {

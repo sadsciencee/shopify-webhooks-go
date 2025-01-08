@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,7 +40,7 @@ func (webhook *ReturnsDecline) GetData() (ReturnsDeclinePayload, error) {
 }
 
 type ReturnsDeclinePayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	Decline           struct {
 		Note   string `json:"note"`
 		Reason string `json:"reason"`

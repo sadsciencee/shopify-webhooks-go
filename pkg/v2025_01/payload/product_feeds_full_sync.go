@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -42,24 +43,24 @@ func (webhook *ProductFeedsFullSync) GetData() (ProductFeedsFullSyncPayload, err
 type ProductFeedsFullSyncPayload struct {
 	Metadata struct {
 		Action          string        `json:"action"`
-		FullSyncID      string        `json:"fullSyncId"`
+		FullSyncID      shopify.ID    `json:"fullSyncId"`
 		OccurredAt      time.Time     `json:"occurred_at"`
 		Resource        string        `json:"resource"`
 		TruncatedFields []interface{} `json:"truncatedFields"`
 		Type            string        `json:"type"`
 	} `json:"metadata"`
 	Product struct {
-		CreatedAt   time.Time `json:"createdAt"`
-		Description string    `json:"description"`
-		Handle      string    `json:"handle"`
-		ID          string    `json:"id"`
+		CreatedAt   time.Time  `json:"createdAt"`
+		Description string     `json:"description"`
+		Handle      string     `json:"handle"`
+		ID          shopify.ID `json:"id"`
 		Images      struct {
 			Edges []struct {
 				Node struct {
-					Height int64  `json:"height"`
-					ID     string `json:"id"`
-					URL    string `json:"url"`
-					Width  int64  `json:"width"`
+					Height int64      `json:"height"`
+					ID     shopify.ID `json:"id"`
+					URL    string     `json:"url"`
+					Width  int64      `json:"width"`
 				} `json:"node"`
 			} `json:"edges"`
 		} `json:"images"`
@@ -85,20 +86,17 @@ type ProductFeedsFullSyncPayload struct {
 					Barcode          interface{} `json:"barcode"`
 					CompareAtPrice   interface{} `json:"compareAtPrice"`
 					CreatedAt        time.Time   `json:"createdAt"`
-					ID               string      `json:"id"`
+					ID               shopify.ID  `json:"id"`
 					Image            struct {
-						Height int64  `json:"height"`
-						ID     string `json:"id"`
-						URL    string `json:"url"`
-						Width  int64  `json:"width"`
+						Height int64      `json:"height"`
+						ID     shopify.ID `json:"id"`
+						URL    string     `json:"url"`
+						Width  int64      `json:"width"`
 					} `json:"image"`
-					InventoryPolicy string `json:"inventoryPolicy"`
-					Price           struct {
-						Amount       string `json:"amount"`
-						CurrencyCode string `json:"currencyCode"`
-					} `json:"price"`
-					QuantityAvailable int64 `json:"quantityAvailable"`
-					RequireShipping   bool  `json:"requireShipping"`
+					InventoryPolicy   string          `json:"inventoryPolicy"`
+					Price             shopify.MoneyV2 `json:"price"`
+					QuantityAvailable int64           `json:"quantityAvailable"`
+					RequireShipping   bool            `json:"requireShipping"`
 					SelectedOptions   []struct {
 						Name  string `json:"name"`
 						Value string `json:"value"`
@@ -114,10 +112,10 @@ type ProductFeedsFullSyncPayload struct {
 		Vendor string `json:"vendor"`
 	} `json:"product"`
 	ProductFeed struct {
-		Country  string `json:"country"`
-		ID       string `json:"id"`
-		Language string `json:"language"`
-		ShopID   string `json:"shop_id"`
+		Country  string     `json:"country"`
+		ID       shopify.ID `json:"id"`
+		Language string     `json:"language"`
+		ShopID   shopify.ID `json:"shop_id"`
 	} `json:"productFeed"`
 	Products interface{} `json:"products"`
 }

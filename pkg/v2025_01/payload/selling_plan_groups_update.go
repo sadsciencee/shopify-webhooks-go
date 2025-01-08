@@ -40,8 +40,8 @@ func (webhook *SellingPlanGroupsUpdate) GetData() (SellingPlanGroupsUpdatePayloa
 }
 
 type SellingPlanGroupsUpdatePayload struct {
-	AdminGraphqlAPIApp string                `json:"admin_graphql_api_app"`
-	AdminGraphqlAPIID  string                `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIApp shopify.ID            `json:"admin_graphql_api_app"`
+	AdminGraphqlAPIID  shopify.ID            `json:"admin_graphql_api_id"`
 	AppID              interface{}           `json:"app_id"`
 	Description        interface{}           `json:"description"`
 	ID                 int64                 `json:"id"`

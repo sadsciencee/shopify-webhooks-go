@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -41,8 +42,8 @@ func (webhook *FulfillmentOrdersRescheduled) GetData() (FulfillmentOrdersResched
 
 type FulfillmentOrdersRescheduledPayload struct {
 	FulfillmentOrder struct {
-		FulfillAt time.Time `json:"fulfill_at"`
-		ID        string    `json:"id"`
-		Status    string    `json:"status"`
+		FulfillAt time.Time  `json:"fulfill_at"`
+		ID        shopify.ID `json:"id"`
+		Status    string     `json:"status"`
 	} `json:"fulfillment_order"`
 }

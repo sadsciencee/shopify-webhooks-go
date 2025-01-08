@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,9 +41,9 @@ func (webhook *DiscountsUpdate) GetData() (DiscountsUpdatePayload, error) {
 }
 
 type DiscountsUpdatePayload struct {
-	AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-	CreatedAt         time.Time `json:"created_at"`
-	Status            string    `json:"status"`
-	Title             string    `json:"title"`
-	UpdatedAt         time.Time `json:"updated_at"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	CreatedAt         time.Time  `json:"created_at"`
+	Status            string     `json:"status"`
+	Title             string     `json:"title"`
+	UpdatedAt         time.Time  `json:"updated_at"`
 }

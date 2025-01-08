@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,7 +40,7 @@ func (webhook *CustomerJoinedSegment) GetData() (CustomerJoinedSegmentPayload, e
 }
 
 type CustomerJoinedSegmentPayload struct {
-	CustomerID string `json:"customer_id"`
-	SegmentID  string `json:"segment_id"`
-	ShopID     string `json:"shop_id"`
+	CustomerID shopify.ID `json:"customer_id"`
+	SegmentID  shopify.ID `json:"segment_id"`
+	ShopID     shopify.ID `json:"shop_id"`
 }

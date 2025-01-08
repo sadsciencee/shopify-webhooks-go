@@ -41,7 +41,7 @@ func (webhook *DraftOrdersCreate) GetData() (DraftOrdersCreatePayload, error) {
 }
 
 type DraftOrdersCreatePayload struct {
-	AdminGraphqlAPIID            string      `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID            shopify.ID  `json:"admin_graphql_api_id"`
 	AllowDiscountCodesInCheckout bool        `json:"allow_discount_codes_in_checkout?"`
 	APIClientID                  interface{} `json:"api_client_id"`
 	AppliedDiscount              struct {
@@ -73,7 +73,7 @@ type DraftOrdersCreatePayload struct {
 		Name               string                    `json:"name"`
 		Price              string                    `json:"price"`
 		ProductID          int64                     `json:"product_id"`
-		Properties         []interface{}             `json:"properties"`
+		Properties         []shopify.CustomAttribute `json:"properties"`
 		Quantity           int64                     `json:"quantity"`
 		RequiresShipping   bool                      `json:"requires_shipping"`
 		Sku                string                    `json:"sku"`
@@ -85,7 +85,7 @@ type DraftOrdersCreatePayload struct {
 		Vendor             string                    `json:"vendor"`
 	} `json:"line_items"`
 	Name           string        `json:"name"`
-	Note           interface{}   `json:"note"`
+	Note           *string       `json:"note"`
 	NoteAttributes []interface{} `json:"note_attributes"`
 	OrderID        interface{}   `json:"order_id"`
 	PaymentTerms   struct {

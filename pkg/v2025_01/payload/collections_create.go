@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,7 +41,7 @@ func (webhook *CollectionsCreate) GetData() (CollectionsCreatePayload, error) {
 }
 
 type CollectionsCreatePayload struct {
-	AdminGraphqlAPIID string      `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID  `json:"admin_graphql_api_id"`
 	BodyHTML          string      `json:"body_html"`
 	Handle            string      `json:"handle"`
 	ID                int64       `json:"id"`

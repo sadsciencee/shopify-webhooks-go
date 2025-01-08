@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,9 +40,9 @@ func (webhook *SubscriptionBillingAttemptsSuccess) GetData() (SubscriptionBillin
 }
 
 type SubscriptionBillingAttemptsSuccessPayload struct {
-	AdminGraphqlAPIID                     interface{} `json:"admin_graphql_api_id"`
-	AdminGraphqlAPIOrderID                string      `json:"admin_graphql_api_order_id"`
-	AdminGraphqlAPISubscriptionContractID string      `json:"admin_graphql_api_subscription_contract_id"`
+	AdminGraphqlAPIID                     *shopify.ID `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIOrderID                shopify.ID  `json:"admin_graphql_api_order_id"`
+	AdminGraphqlAPISubscriptionContractID shopify.ID  `json:"admin_graphql_api_subscription_contract_id"`
 	ErrorCode                             interface{} `json:"error_code"`
 	ErrorMessage                          interface{} `json:"error_message"`
 	ID                                    string      `json:"id"`

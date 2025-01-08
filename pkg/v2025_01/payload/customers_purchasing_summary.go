@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,12 +41,9 @@ func (webhook *CustomersPurchasingSummary) GetData() (CustomersPurchasingSummary
 }
 
 type CustomersPurchasingSummaryPayload struct {
-	AmountSpent struct {
-		Amount       string `json:"amount"`
-		CurrencyCode string `json:"currencyCode"`
-	} `json:"amountSpent"`
-	CustomerID     string    `json:"customerId"`
-	LastOrderID    string    `json:"lastOrderId"`
-	NumberOfOrders int64     `json:"numberOfOrders"`
-	OccurredAt     time.Time `json:"occurredAt"`
+	AmountSpent    shopify.MoneyV2 `json:"amountSpent"`
+	CustomerID     string          `json:"customerId"`
+	LastOrderID    string          `json:"lastOrderId"`
+	NumberOfOrders int64           `json:"numberOfOrders"`
+	OccurredAt     time.Time       `json:"occurredAt"`
 }

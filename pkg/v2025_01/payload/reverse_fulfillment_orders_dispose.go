@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,17 +40,17 @@ func (webhook *ReverseFulfillmentOrdersDispose) GetData() (ReverseFulfillmentOrd
 }
 
 type ReverseFulfillmentOrdersDisposePayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	Dispositions      []struct {
 		Location struct {
-			AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
-			ID                int64  `json:"id"`
+			AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+			ID                int64      `json:"id"`
 		} `json:"location"`
 		Quantity                        int64       `json:"quantity"`
 		ReverseDeliveryLineItem         interface{} `json:"reverse_delivery_line_item"`
 		ReverseFulfillmentOrderLineItem struct {
-			AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
-			ID                int64  `json:"id"`
+			AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+			ID                int64      `json:"id"`
 		} `json:"reverse_fulfillment_order_line_item"`
 		Type string `json:"type"`
 	} `json:"dispositions"`

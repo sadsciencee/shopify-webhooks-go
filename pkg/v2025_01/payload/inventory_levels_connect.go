@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,7 +41,7 @@ func (webhook *InventoryLevelsConnect) GetData() (InventoryLevelsConnectPayload,
 }
 
 type InventoryLevelsConnectPayload struct {
-	AdminGraphqlAPIID string      `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID  `json:"admin_graphql_api_id"`
 	Available         interface{} `json:"available"`
 	InventoryItemID   int64       `json:"inventory_item_id"`
 	LocationID        int64       `json:"location_id"`

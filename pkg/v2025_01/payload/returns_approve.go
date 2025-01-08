@@ -40,21 +40,21 @@ func (webhook *ReturnsApprove) GetData() (ReturnsApprovePayload, error) {
 }
 
 type ReturnsApprovePayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	ExchangeLineItems []struct {
-		AdminGraphqlAPIID string      `json:"admin_graphql_api_id"`
+		AdminGraphqlAPIID shopify.ID  `json:"admin_graphql_api_id"`
 		ID                int64       `json:"id"`
 		LineItem          interface{} `json:"line_item"`
 	} `json:"exchange_line_items"`
 	ID    int64       `json:"id"`
 	Name  interface{} `json:"name"`
 	Order struct {
-		AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
-		ID                int64  `json:"id"`
+		AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+		ID                int64      `json:"id"`
 	} `json:"order"`
 	ReturnLineItems    []interface{} `json:"return_line_items"`
 	ReturnShippingFees []struct {
-		AdminGraphqlAPIID string           `json:"admin_graphql_api_id"`
+		AdminGraphqlAPIID shopify.ID       `json:"admin_graphql_api_id"`
 		ID                int64            `json:"id"`
 		Price             shopify.MoneyBag `json:"price"`
 	} `json:"return_shipping_fees"`

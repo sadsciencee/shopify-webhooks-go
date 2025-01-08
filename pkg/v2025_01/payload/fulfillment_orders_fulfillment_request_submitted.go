@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -43,14 +44,6 @@ type FulfillmentOrdersFulfillmentRequestSubmittedPayload struct {
 		ID      string `json:"id"`
 		Message string `json:"message"`
 	} `json:"fulfillment_order_merchant_request"`
-	OriginalFulfillmentOrder struct {
-		ID            string `json:"id"`
-		RequestStatus string `json:"request_status"`
-		Status        string `json:"status"`
-	} `json:"original_fulfillment_order"`
-	SubmittedFulfillmentOrder struct {
-		ID            string `json:"id"`
-		RequestStatus string `json:"request_status"`
-		Status        string `json:"status"`
-	} `json:"submitted_fulfillment_order"`
+	OriginalFulfillmentOrder  shopify.FulfillmentOrder `json:"original_fulfillment_order"`
+	SubmittedFulfillmentOrder shopify.FulfillmentOrder `json:"submitted_fulfillment_order"`
 }

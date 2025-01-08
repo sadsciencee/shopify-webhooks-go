@@ -41,22 +41,22 @@ func (webhook *OrderTransactionsCreate) GetData() (OrderTransactionsCreatePayloa
 }
 
 type OrderTransactionsCreatePayload struct {
-	AdminGraphqlAPIID    string      `json:"admin_graphql_api_id"`
-	Amount               string      `json:"amount"`
-	AmountRounding       interface{} `json:"amount_rounding"`
-	Authorization        string      `json:"authorization"`
-	CreatedAt            time.Time   `json:"created_at"`
-	Currency             string      `json:"currency"`
-	DeviceID             interface{} `json:"device_id"`
-	ErrorCode            interface{} `json:"error_code"`
-	Gateway              string      `json:"gateway"`
-	ID                   int64       `json:"id"`
-	Kind                 string      `json:"kind"`
-	LocationID           interface{} `json:"location_id"`
-	ManualPaymentGateway bool        `json:"manual_payment_gateway"`
-	Message              interface{} `json:"message"`
-	OrderID              int64       `json:"order_id"`
-	ParentID             interface{} `json:"parent_id"`
+	AdminGraphqlAPIID    shopify.ID      `json:"admin_graphql_api_id"`
+	Amount               shopify.Decimal `json:"amount"`
+	AmountRounding       interface{}     `json:"amount_rounding"`
+	Authorization        string          `json:"authorization"`
+	CreatedAt            time.Time       `json:"created_at"`
+	Currency             string          `json:"currency"`
+	DeviceID             interface{}     `json:"device_id"`
+	ErrorCode            interface{}     `json:"error_code"`
+	Gateway              string          `json:"gateway"`
+	ID                   int64           `json:"id"`
+	Kind                 string          `json:"kind"`
+	LocationID           interface{}     `json:"location_id"`
+	ManualPaymentGateway bool            `json:"manual_payment_gateway"`
+	Message              interface{}     `json:"message"`
+	OrderID              int64           `json:"order_id"`
+	ParentID             interface{}     `json:"parent_id"`
 	PaymentDetails       struct {
 		AvsResultCode             interface{} `json:"avs_result_code"`
 		BuyerActionInfo           interface{} `json:"buyer_action_info"`

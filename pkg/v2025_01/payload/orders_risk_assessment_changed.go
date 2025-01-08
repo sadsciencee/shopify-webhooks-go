@@ -3,7 +3,9 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
+	"time"
 )
 
 func NewOrdersRiskAssessmentChanged(webhook webhook.ValidWebhook) (*OrdersRiskAssessmentChanged, error) {
@@ -39,9 +41,9 @@ func (webhook *OrdersRiskAssessmentChanged) GetData() (OrdersRiskAssessmentChang
 }
 
 type OrdersRiskAssessmentChangedPayload struct {
-	AdminGraphqlAPIOrderID interface{} `json:"admin_graphql_api_order_id"`
-	CreatedAt              interface{} `json:"created_at"`
-	OrderID                interface{} `json:"order_id"`
+	AdminGraphqlAPIOrderID *shopify.ID `json:"admin_graphql_api_order_id"`
+	CreatedAt              *time.Time  `json:"created_at"`
+	OrderID                *int64      `json:"order_id"`
 	ProviderID             interface{} `json:"provider_id"`
 	ProviderTitle          interface{} `json:"provider_title"`
 	RiskLevel              string      `json:"risk_level"`

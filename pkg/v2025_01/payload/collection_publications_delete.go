@@ -39,5 +39,5 @@ func (webhook *CollectionPublicationsDelete) GetData() (CollectionPublicationsDe
 }
 
 type CollectionPublicationsDeletePayload struct {
-	ID string `json:"id"`
+	ID *int64 `json:"id"`
 }

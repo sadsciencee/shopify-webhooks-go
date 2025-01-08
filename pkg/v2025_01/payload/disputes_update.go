@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,16 +41,16 @@ func (webhook *DisputesUpdate) GetData() (DisputesUpdatePayload, error) {
 }
 
 type DisputesUpdatePayload struct {
-	Amount            string      `json:"amount"`
-	Currency          string      `json:"currency"`
-	EvidenceDueBy     string      `json:"evidence_due_by"`
-	EvidenceSentOn    interface{} `json:"evidence_sent_on"`
-	FinalizedOn       interface{} `json:"finalized_on"`
-	ID                int64       `json:"id"`
-	InitiatedAt       time.Time   `json:"initiated_at"`
-	NetworkReasonCode string      `json:"network_reason_code"`
-	OrderID           int64       `json:"order_id"`
-	Reason            string      `json:"reason"`
-	Status            string      `json:"status"`
-	Type              string      `json:"type"`
+	Amount            shopify.Decimal `json:"amount"`
+	Currency          string          `json:"currency"`
+	EvidenceDueBy     string          `json:"evidence_due_by"`
+	EvidenceSentOn    interface{}     `json:"evidence_sent_on"`
+	FinalizedOn       interface{}     `json:"finalized_on"`
+	ID                int64           `json:"id"`
+	InitiatedAt       time.Time       `json:"initiated_at"`
+	NetworkReasonCode string          `json:"network_reason_code"`
+	OrderID           int64           `json:"order_id"`
+	Reason            string          `json:"reason"`
+	Status            string          `json:"status"`
+	Type              string          `json:"type"`
 }

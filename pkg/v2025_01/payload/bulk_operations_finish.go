@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,10 +41,10 @@ func (webhook *BulkOperationsFinish) GetData() (BulkOperationsFinishPayload, err
 }
 
 type BulkOperationsFinishPayload struct {
-	AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-	CompletedAt       time.Time `json:"completed_at"`
-	CreatedAt         time.Time `json:"created_at"`
-	ErrorCode         *string   `json:"error_code"`
-	Status            string    `json:"status"`
-	Type              string    `json:"type"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	CompletedAt       time.Time  `json:"completed_at"`
+	CreatedAt         time.Time  `json:"created_at"`
+	ErrorCode         *string    `json:"error_code"`
+	Status            string     `json:"status"`
+	Type              string     `json:"type"`
 }
