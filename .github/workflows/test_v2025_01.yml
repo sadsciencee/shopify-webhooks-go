@@ -3,10 +3,10 @@ name: test_v2025_01
 on:
   push:
     branches:
-      - mainx
+      - main
   pull_request:
     branches:
-      - mainx
+      - main
 
 jobs:
   test:
