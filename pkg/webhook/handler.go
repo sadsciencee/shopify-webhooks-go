@@ -115,6 +115,7 @@ func (wh *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+// validateRequest validates the incoming webhook request using the provided Shopify API secret against the HMAC signature
 func validateRequest(httpRequest *http.Request, shopifyApiSecret string) (*UnknownWebhook, error) {
 	fmt.Println("Request received")
 	if httpRequest == nil {
@@ -174,6 +175,7 @@ func newUnknownWebhook(body io.Reader, info Info) *UnknownWebhook {
 	}
 }
 
+// parseWebhookInfo creates a standardized Info struct from the incoming webhook request and validates the topic
 func parseWebhookInfo(r *http.Request) (*Info, error) {
 	topic, err := ValidateTopic(r.Header.Get(shopifyTopicHeader))
 	if err != nil {
