@@ -1,15 +1,12 @@
 package test
 
 import (
-	"bytes"
 	"context"
 	"fmt"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
-	"io"
 	"net/http"
 	"os"
 	"os/exec"
-	"strings"
 	"testing"
 	"time"
 )
@@ -57,38 +54,9 @@ func WebhookHelper(t *testing.T, topic webhook.Topic, tc CallbackForTestUtil, in
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 	}
 
-	tmpDir := "/tmp/requests"
-	if err := os.MkdirAll(tmpDir, 0755); err != nil {
-		t.Fatalf("Failed to create tmp directory: %v", err)
-	}
-
 	webhookHandler := webhook.NewHandlerWithErrorHandler(secret, handler, errorHandler)
-	loggingHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Read the body
-		body, err := io.ReadAll(r.Body)
-		if err != nil {
-			t.Errorf("Failed to read request body: %v", err)
-			http.Error(w, "Internal server error", http.StatusInternalServerError)
-			return
-		}
-
-		// Replace the body for the next handler
-		t.Logf("Received request body: %s", string(body))
-		t.Logf("Writing to directory: %s", tmpDir)
-		r.Body = io.NopCloser(bytes.NewBuffer(body))
-
-		// Write to file
-		sanitizedTopic := strings.ReplaceAll(string(topic), "/", "_")
-		filename := fmt.Sprintf("%s/%d_%s.json", tmpDir, time.Now().Unix(), sanitizedTopic)
-		if err := os.WriteFile(filename, body, 0644); err != nil {
-			t.Errorf("Failed to write request to file: %v", err)
-		}
-
-		// Call the original handler
-		webhookHandler.ServeHTTP(w, r)
-	})
 	mux := http.NewServeMux()
-	mux.Handle("/webhook", loggingHandler)
+	mux.Handle("/webhook", webhookHandler)
 
 	server := &http.Server{
 		Addr:    addr,
