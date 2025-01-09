@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,7 +41,7 @@ func (webhook *CustomerTagsRemoved) GetData() (CustomerTagsRemovedPayload, error
 }
 
 type CustomerTagsRemovedPayload struct {
-	CustomerID string    `json:"customerId"`
-	OccurredAt time.Time `json:"occurredAt"`
-	Tags       []string  `json:"tags"`
+	CustomerID shopify.ID `json:"customerId"`
+	OccurredAt time.Time  `json:"occurredAt"`
+	Tags       []string   `json:"tags"`
 }

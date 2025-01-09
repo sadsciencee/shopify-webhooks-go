@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"strings"
 	"time"
@@ -50,17 +51,17 @@ type ProductFeedsFullSyncFinishPayload struct {
 	} `json:"fullSync"`
 	Metadata struct {
 		Action          string        `json:"action"`
-		FullSyncID      string        `json:"fullSyncId"`
+		FullSyncID      shopify.ID    `json:"fullSyncId"`
 		OccurredAt      time.Time     `json:"occurred_at"`
 		Resource        string        `json:"resource"`
 		TruncatedFields []interface{} `json:"truncatedFields"`
 		Type            string        `json:"type"`
 	} `json:"metadata"`
 	ProductFeed struct {
-		Country  string `json:"country"`
-		ID       string `json:"id"`
-		Language string `json:"language"`
-		ShopID   string `json:"shop_id"`
+		Country  string     `json:"country"`
+		ID       shopify.ID `json:"id"`
+		Language string     `json:"language"`
+		ShopID   shopify.ID `json:"shop_id"`
 	} `json:"productFeed"`
 }
 

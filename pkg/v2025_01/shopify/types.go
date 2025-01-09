@@ -1,10 +1,92 @@
 package shopify
 
-import "time"
+import (
+	"encoding/json"
+	"fmt"
+	"strconv"
+	"strings"
+	"time"
+)
+
+type ID string
+
+func (g *ID) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+
+	prefix := "gid://shopify/"
+	if !strings.HasPrefix(s, prefix) {
+		return fmt.Errorf("invalid ID format: must start with %s", prefix)
+	}
+
+	parts := strings.Split(s[len(prefix):], "/")
+	if len(parts) != 2 {
+		return fmt.Errorf("invalid ID format: must be %s{resource}/{id}", prefix)
+	}
+
+	*g = ID(s)
+	return nil
+}
+
+func (g *ID) ResourceName() string {
+	parts := strings.Split(string(*g)[13:], "/")
+	if len(parts) != 2 {
+		return ""
+	}
+	return parts[0]
+}
+
+func (g *ID) CleanId() string {
+	parts := strings.Split(string(*g)[13:], "/")
+	if len(parts) != 2 {
+		return ""
+	}
+	return parts[1]
+}
+
+func (g *ID) IntId() (int64, error) {
+	id := g.CleanId()
+	return strconv.ParseInt(id, 10, 64)
+}
+
+type CustomAttribute struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
+
+type Decimal string
+
+func (d *Decimal) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err == nil {
+		sv := strings.ReplaceAll(s, ",", ".")
+		if _, err := strconv.ParseFloat(sv, 64); err != nil {
+			return fmt.Errorf("decimal: invalid decimal string: %s", s)
+		}
+
+		*d = Decimal(s)
+		return nil
+	}
+
+	var f float64
+	if err := json.Unmarshal(data, &f); err == nil {
+		*d = Decimal(strconv.FormatFloat(f, 'f', -1, 64))
+		return nil
+	}
+
+	return fmt.Errorf("decimal: cannot unmarshal %s", string(data))
+}
+
+func (d *Decimal) ToFloat() (float64, error) {
+	s := strings.ReplaceAll(string(*d), ",", ".")
+	return strconv.ParseFloat(s, 64)
+}
 
 type MoneyV2 struct {
-	Amount       string `json:"amount"`
-	CurrencyCode string `json:"currency_code"`
+	Amount       Decimal `json:"amount"`
+	CurrencyCode string  `json:"currency_code"`
 }
 
 type MoneyBag struct {
@@ -105,6 +187,39 @@ type AttributedStaff struct {
 	Quantity int64  `json:"quantity"`
 }
 
+type LineItem struct {
+	AdminGraphqlAPIID          string            `json:"admin_graphql_api_id"`
+	AttributedStaffs           []AttributedStaff `json:"attributed_staffs"`
+	CurrentQuantity            int64             `json:"current_quantity"`
+	DiscountAllocations        []interface{}     `json:"discount_allocations"`
+	Duties                     []interface{}     `json:"duties"`
+	FulfillableQuantity        int64             `json:"fulfillable_quantity"`
+	FulfillmentService         string            `json:"fulfillment_service"`
+	FulfillmentStatus          interface{}       `json:"fulfillment_status"`
+	GiftCard                   bool              `json:"gift_card"`
+	Grams                      int64             `json:"grams"`
+	ID                         int64             `json:"id"`
+	Name                       string            `json:"name"`
+	Price                      string            `json:"price"`
+	PriceSet                   MoneyBag          `json:"price_set"`
+	ProductExists              bool              `json:"product_exists"`
+	ProductID                  int64             `json:"product_id"`
+	Properties                 []CustomAttribute `json:"properties"`
+	Quantity                   int64             `json:"quantity"`
+	RequiresShipping           bool              `json:"requires_shipping"`
+	SalesLineItemGroupID       interface{}       `json:"sales_line_item_group_id"`
+	Sku                        string            `json:"sku"`
+	TaxLines                   []LineItemTaxLine `json:"tax_lines"`
+	Taxable                    bool              `json:"taxable"`
+	Title                      string            `json:"title"`
+	TotalDiscount              string            `json:"total_discount"`
+	TotalDiscountSet           MoneyBag          `json:"total_discount_set"`
+	VariantID                  int64             `json:"variant_id"`
+	VariantInventoryManagement string            `json:"variant_inventory_management"`
+	VariantTitle               interface{}       `json:"variant_title"`
+	Vendor                     interface{}       `json:"vendor"`
+}
+
 type LineItemTaxLine struct {
 	ChannelLiable             bool        `json:"channel_liable"`
 	CompareAt                 float64     `json:"compare_at"`
@@ -161,4 +276,37 @@ type ShippingLine struct {
 	Source                        string            `json:"source"`
 	TaxLines                      []ShippingTaxLine `json:"tax_lines"`
 	Title                         string            `json:"title"`
+}
+
+type DiscountAllocation struct {
+	Amount                   string   `json:"amount"`
+	AmountSet                MoneyBag `json:"amount_set"`
+	DiscountApplicationIndex int64    `json:"discount_application_index"`
+}
+
+type Localization struct {
+	AlternateLocales []string `json:"alternate_locales"`
+	Country          *string  `json:"country"`
+	DefaultLocale    string   `json:"default_locale"`
+}
+
+type DeliveryMethod struct {
+	MethodType string `json:"method_type"`
+}
+
+type FulfillmentOrder struct {
+	ID                 ID              `json:"id"`
+	Status             *string         `json:"status"`
+	RequestStatus      *string         `json:"request_status"`
+	DeliveryMethod     *DeliveryMethod `json:"delivery_method"`
+	Preparable         *bool           `json:"preparable"`
+	AssignedLocationID *string         `json:"assigned_location_id"`
+}
+
+type ProductOption struct {
+	ID        int64    `json:"id"`
+	Name      string   `json:"name"`
+	Position  int64    `json:"position"`
+	ProductID int64    `json:"product_id"`
+	Values    []string `json:"values"`
 }

@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,7 +41,7 @@ func (webhook *DiscountsRedeemcodeAdded) GetData() (DiscountsRedeemcodeAddedPayl
 }
 
 type DiscountsRedeemcodeAddedPayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	RedeemCode        struct {
 		Code string `json:"code"`
 		ID   string `json:"id"`

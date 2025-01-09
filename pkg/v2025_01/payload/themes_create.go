@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,13 +41,13 @@ func (webhook *ThemesCreate) GetData() (ThemesCreatePayload, error) {
 }
 
 type ThemesCreatePayload struct {
-	AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-	CreatedAt         time.Time `json:"created_at"`
-	ID                int64     `json:"id"`
-	Name              string    `json:"name"`
-	Previewable       bool      `json:"previewable"`
-	Processing        bool      `json:"processing"`
-	Role              string    `json:"role"`
-	ThemeStoreID      int64     `json:"theme_store_id"`
-	UpdatedAt         time.Time `json:"updated_at"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	CreatedAt         time.Time  `json:"created_at"`
+	ID                int64      `json:"id"`
+	Name              string     `json:"name"`
+	Previewable       bool       `json:"previewable"`
+	Processing        bool       `json:"processing"`
+	Role              string     `json:"role"`
+	ThemeStoreID      int64      `json:"theme_store_id"`
+	UpdatedAt         time.Time  `json:"updated_at"`
 }

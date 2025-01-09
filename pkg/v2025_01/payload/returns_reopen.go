@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,8 +40,8 @@ func (webhook *ReturnsReopen) GetData() (ReturnsReopenPayload, error) {
 }
 
 type ReturnsReopenPayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
-	ID                int64  `json:"id"`
-	OrderID           int64  `json:"order_id"`
-	Status            string `json:"status"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	ID                int64      `json:"id"`
+	OrderID           int64      `json:"order_id"`
+	Status            string     `json:"status"`
 }

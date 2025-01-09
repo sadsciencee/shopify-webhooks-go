@@ -39,8 +39,8 @@ func (webhook *CustomersMarketingConsentUpdate) GetData() (CustomersMarketingCon
 }
 
 type CustomersMarketingConsentUpdatePayload struct {
-	ID                  int64       `json:"id"`
-	Phone               interface{} `json:"phone"`
+	ID                  int64   `json:"id"`
+	Phone               *string `json:"phone"`
 	SmsMarketingConsent struct {
 		ConsentCollectedFrom string      `json:"consent_collected_from"`
 		ConsentUpdatedAt     interface{} `json:"consent_updated_at"`

@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,21 +41,21 @@ func (webhook *LocationsUpdate) GetData() (LocationsUpdatePayload, error) {
 }
 
 type LocationsUpdatePayload struct {
-	Active            bool      `json:"active"`
-	Address1          string    `json:"address1"`
-	Address2          string    `json:"address2"`
-	AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-	City              string    `json:"city"`
-	Country           string    `json:"country"`
-	CountryCode       string    `json:"country_code"`
-	CountryName       string    `json:"country_name"`
-	CreatedAt         time.Time `json:"created_at"`
-	ID                int64     `json:"id"`
-	Legacy            bool      `json:"legacy"`
-	Name              string    `json:"name"`
-	Phone             string    `json:"phone"`
-	Province          string    `json:"province"`
-	ProvinceCode      string    `json:"province_code"`
-	UpdatedAt         time.Time `json:"updated_at"`
-	Zip               string    `json:"zip"`
+	Active            bool       `json:"active"`
+	Address1          string     `json:"address1"`
+	Address2          string     `json:"address2"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	City              string     `json:"city"`
+	Country           string     `json:"country"`
+	CountryCode       string     `json:"country_code"`
+	CountryName       string     `json:"country_name"`
+	CreatedAt         time.Time  `json:"created_at"`
+	ID                int64      `json:"id"`
+	Legacy            bool       `json:"legacy"`
+	Name              string     `json:"name"`
+	Phone             string     `json:"phone"`
+	Province          string     `json:"province"`
+	ProvinceCode      string     `json:"province_code"`
+	UpdatedAt         time.Time  `json:"updated_at"`
+	Zip               string     `json:"zip"`
 }

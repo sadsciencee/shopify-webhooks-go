@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -42,33 +43,33 @@ type FulfillmentOrdersPlacedOnHoldPayload struct {
 	CreatedFulfillmentHold struct {
 		Handle    string `json:"handle"`
 		HeldByApp struct {
-			ID string `json:"id"`
+			ID shopify.ID `json:"id"`
 		} `json:"held_by_app"`
-		HeldByRequestingApp bool   `json:"held_by_requesting_app"`
-		ID                  string `json:"id"`
-		Reason              string `json:"reason"`
-		ReasonNotes         string `json:"reason_notes"`
+		HeldByRequestingApp bool       `json:"held_by_requesting_app"`
+		ID                  shopify.ID `json:"id"`
+		Reason              string     `json:"reason"`
+		ReasonNotes         string     `json:"reason_notes"`
 	} `json:"created_fulfillment_hold"`
 	FulfillmentOrder struct {
 		FulfillmentHolds []struct {
 			Handle    string `json:"handle"`
 			HeldByApp struct {
-				ID string `json:"id"`
+				ID shopify.ID `json:"id"`
 			} `json:"held_by_app"`
-			HeldByRequestingApp bool   `json:"held_by_requesting_app"`
-			ID                  string `json:"id"`
-			Reason              string `json:"reason"`
-			ReasonNotes         string `json:"reason_notes"`
+			HeldByRequestingApp bool       `json:"held_by_requesting_app"`
+			ID                  shopify.ID `json:"id"`
+			Reason              string     `json:"reason"`
+			ReasonNotes         string     `json:"reason_notes"`
 		} `json:"fulfillment_holds"`
-		ID     string `json:"id"`
-		Status string `json:"status"`
+		ID     shopify.ID `json:"id"`
+		Status string     `json:"status"`
 	} `json:"fulfillment_order"`
 	HeldFulfillmentOrderLineItems []struct {
-		ID       string `json:"id"`
-		Quantity int64  `json:"quantity"`
+		ID       shopify.ID `json:"id"`
+		Quantity int64      `json:"quantity"`
 	} `json:"held_fulfillment_order_line_items"`
 	RemainingFulfillmentOrder struct {
-		ID     string `json:"id"`
-		Status string `json:"status"`
+		ID     shopify.ID `json:"id"`
+		Status string     `json:"status"`
 	} `json:"remaining_fulfillment_order"`
 }

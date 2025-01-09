@@ -44,30 +44,30 @@ type CartsCreatePayload struct {
 	CreatedAt time.Time `json:"created_at"`
 	ID        string    `json:"id"`
 	LineItems []struct {
-		DiscountedPrice      string           `json:"discounted_price"`
-		DiscountedPriceSet   shopify.MoneyBag `json:"discounted_price_set"`
-		Discounts            []interface{}    `json:"discounts"`
-		GiftCard             bool             `json:"gift_card"`
-		Grams                int64            `json:"grams"`
-		ID                   int64            `json:"id"`
-		Key                  string           `json:"key"`
-		LinePrice            string           `json:"line_price"`
-		LinePriceSet         shopify.MoneyBag `json:"line_price_set"`
-		OriginalLinePrice    string           `json:"original_line_price"`
-		OriginalLinePriceSet shopify.MoneyBag `json:"original_line_price_set"`
-		OriginalPrice        string           `json:"original_price"`
-		Price                string           `json:"price"`
-		PriceSet             shopify.MoneyBag `json:"price_set"`
-		ProductID            int64            `json:"product_id"`
-		Properties           struct{}         `json:"properties"`
-		Quantity             int64            `json:"quantity"`
-		Sku                  string           `json:"sku"`
-		Taxable              bool             `json:"taxable"`
-		Title                string           `json:"title"`
-		TotalDiscount        string           `json:"total_discount"`
-		TotalDiscountSet     shopify.MoneyBag `json:"total_discount_set"`
-		VariantID            int64            `json:"variant_id"`
-		Vendor               string           `json:"vendor"`
+		DiscountedPrice      string            `json:"discounted_price"`
+		DiscountedPriceSet   shopify.MoneyBag  `json:"discounted_price_set"`
+		Discounts            []interface{}     `json:"discounts"`
+		GiftCard             bool              `json:"gift_card"`
+		Grams                int64             `json:"grams"`
+		ID                   int64             `json:"id"`
+		Key                  string            `json:"key"`
+		LinePrice            string            `json:"line_price"`
+		LinePriceSet         shopify.MoneyBag  `json:"line_price_set"`
+		OriginalLinePrice    string            `json:"original_line_price"`
+		OriginalLinePriceSet shopify.MoneyBag  `json:"original_line_price_set"`
+		OriginalPrice        string            `json:"original_price"`
+		Price                string            `json:"price"`
+		PriceSet             shopify.MoneyBag  `json:"price_set"`
+		ProductID            int64             `json:"product_id"`
+		Properties           map[string]string `json:"properties"`
+		Quantity             int64             `json:"quantity"`
+		Sku                  string            `json:"sku"`
+		Taxable              bool              `json:"taxable"`
+		Title                string            `json:"title"`
+		TotalDiscount        string            `json:"total_discount"`
+		TotalDiscountSet     shopify.MoneyBag  `json:"total_discount_set"`
+		VariantID            int64             `json:"variant_id"`
+		Vendor               string            `json:"vendor"`
 	} `json:"line_items"`
 	Note      interface{} `json:"note"`
 	Token     string      `json:"token"`

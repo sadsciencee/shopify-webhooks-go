@@ -62,7 +62,7 @@ type CheckoutsCreatePayload struct {
 		AppliedDiscounts        []interface{}                `json:"applied_discounts"`
 		CompareAtPrice          interface{}                  `json:"compare_at_price"`
 		DestinationLocationID   int64                        `json:"destination_location_id"`
-		DiscountAllocations     []interface{}                `json:"discount_allocations"`
+		DiscountAllocations     []shopify.DiscountAllocation `json:"discount_allocations"`
 		FulfillmentService      string                       `json:"fulfillment_service"`
 		GiftCard                bool                         `json:"gift_card"`
 		Grams                   int64                        `json:"grams"`
@@ -73,7 +73,7 @@ type CheckoutsCreatePayload struct {
 		PresentmentVariantTitle string                       `json:"presentment_variant_title"`
 		Price                   string                       `json:"price"`
 		ProductID               int64                        `json:"product_id"`
-		Properties              interface{}                  `json:"properties"`
+		Properties              map[string]string            `json:"properties"`
 		Quantity                int64                        `json:"quantity"`
 		Rank                    interface{}                  `json:"rank"`
 		RequiresShipping        bool                         `json:"requires_shipping"`

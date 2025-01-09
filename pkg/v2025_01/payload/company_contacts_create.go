@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,20 +41,20 @@ func (webhook *CompanyContactsCreate) GetData() (CompanyContactsCreatePayload, e
 }
 
 type CompanyContactsCreatePayload struct {
-	AdminGraphqlAPIID string `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
 	Company           struct {
-		AdminGraphqlAPIID            string    `json:"admin_graphql_api_id"`
-		CreatedAt                    time.Time `json:"created_at"`
-		CustomerSince                string    `json:"customer_since"`
-		ExternalID                   string    `json:"external_id"`
-		MainContactAdminGraphqlAPIID string    `json:"main_contact_admin_graphql_api_id"`
-		Name                         string    `json:"name"`
-		Note                         string    `json:"note"`
-		UpdatedAt                    time.Time `json:"updated_at"`
+		AdminGraphqlAPIID            shopify.ID `json:"admin_graphql_api_id"`
+		CreatedAt                    time.Time  `json:"created_at"`
+		CustomerSince                string     `json:"customer_since"`
+		ExternalID                   string     `json:"external_id"`
+		MainContactAdminGraphqlAPIID shopify.ID `json:"main_contact_admin_graphql_api_id"`
+		Name                         string     `json:"name"`
+		Note                         string     `json:"note"`
+		UpdatedAt                    time.Time  `json:"updated_at"`
 	} `json:"company"`
-	CreatedAt                 time.Time `json:"created_at"`
-	CustomerAdminGraphqlAPIID string    `json:"customer_admin_graphql_api_id"`
-	Locale                    string    `json:"locale"`
-	Title                     string    `json:"title"`
-	UpdatedAt                 time.Time `json:"updated_at"`
+	CreatedAt                 time.Time  `json:"created_at"`
+	CustomerAdminGraphqlAPIID shopify.ID `json:"customer_admin_graphql_api_id"`
+	Locale                    string     `json:"locale"`
+	Title                     string     `json:"title"`
+	UpdatedAt                 time.Time  `json:"updated_at"`
 }

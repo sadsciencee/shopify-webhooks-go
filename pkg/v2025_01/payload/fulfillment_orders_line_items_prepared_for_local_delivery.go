@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,12 +40,5 @@ func (webhook *FulfillmentOrdersLineItemsPreparedForLocalDelivery) GetData() (Fu
 }
 
 type FulfillmentOrdersLineItemsPreparedForLocalDeliveryPayload struct {
-	FulfillmentOrder struct {
-		DeliveryMethod struct {
-			MethodType string `json:"method_type"`
-		} `json:"delivery_method"`
-		ID         string `json:"id"`
-		Preparable bool   `json:"preparable"`
-		Status     string `json:"status"`
-	} `json:"fulfillment_order"`
+	FulfillmentOrder shopify.FulfillmentOrder `json:"fulfillment_order"`
 }

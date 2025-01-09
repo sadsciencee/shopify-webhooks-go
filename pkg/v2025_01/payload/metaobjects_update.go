@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -45,16 +46,14 @@ type MetaobjectsUpdatePayload struct {
 			Status string `json:"status"`
 		} `json:"publishable"`
 	} `json:"capabilities"`
-	CreatedAt        time.Time `json:"created_at"`
-	CreatedByAppID   string    `json:"created_by_app_id"`
-	CreatedByStaffID string    `json:"created_by_staff_id"`
-	DefinitionID     string    `json:"definition_id"`
-	DisplayName      string    `json:"display_name"`
-	Fields           struct {
-		Example_key string `json:"example-key"`
-	} `json:"fields"`
-	Handle    string    `json:"handle"`
-	ID        string    `json:"id"`
-	Type      string    `json:"type"`
-	UpdatedAt time.Time `json:"updated_at"`
+	CreatedAt        time.Time         `json:"created_at"`
+	CreatedByAppID   *shopify.ID       `json:"created_by_app_id"`
+	CreatedByStaffID *shopify.ID       `json:"created_by_staff_id"`
+	DefinitionID     shopify.ID        `json:"definition_id"`
+	DisplayName      string            `json:"display_name"`
+	Fields           map[string]string `json:"fields"`
+	Handle           string            `json:"handle"`
+	ID               shopify.ID        `json:"id"`
+	Type             string            `json:"type"`
+	UpdatedAt        time.Time         `json:"updated_at"`
 }

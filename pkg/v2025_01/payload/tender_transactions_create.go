@@ -3,7 +3,9 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
+	"time"
 )
 
 func NewTenderTransactionsCreate(webhook webhook.ValidWebhook) (*TenderTransactionsCreate, error) {
@@ -39,14 +41,14 @@ func (webhook *TenderTransactionsCreate) GetData() (TenderTransactionsCreatePayl
 }
 
 type TenderTransactionsCreatePayload struct {
-	Amount          string      `json:"amount"`
-	Currency        string      `json:"currency"`
-	ID              int64       `json:"id"`
-	OrderID         int64       `json:"order_id"`
-	PaymentDetails  interface{} `json:"payment_details"`
-	PaymentMethod   string      `json:"payment_method"`
-	ProcessedAt     interface{} `json:"processed_at"`
-	RemoteReference string      `json:"remote_reference"`
-	Test            bool        `json:"test"`
-	UserID          interface{} `json:"user_id"`
+	Amount          shopify.Decimal `json:"amount"`
+	Currency        string          `json:"currency"`
+	ID              int64           `json:"id"`
+	OrderID         int64           `json:"order_id"`
+	PaymentDetails  interface{}     `json:"payment_details"`
+	PaymentMethod   string          `json:"payment_method"`
+	ProcessedAt     *time.Time      `json:"processed_at"`
+	RemoteReference string          `json:"remote_reference"`
+	Test            bool            `json:"test"`
+	UserID          interface{}     `json:"user_id"`
 }

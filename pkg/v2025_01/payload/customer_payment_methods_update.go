@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,10 +40,10 @@ func (webhook *CustomerPaymentMethodsUpdate) GetData() (CustomerPaymentMethodsUp
 }
 
 type CustomerPaymentMethodsUpdatePayload struct {
-	AdminGraphqlAPICustomerID string `json:"admin_graphql_api_customer_id"`
-	AdminGraphqlAPIID         string `json:"admin_graphql_api_id"`
-	CustomerID                int64  `json:"customer_id"`
-	InstrumentType            string `json:"instrument_type"`
+	AdminGraphqlAPICustomerID shopify.ID `json:"admin_graphql_api_customer_id"`
+	AdminGraphqlAPIID         shopify.ID `json:"admin_graphql_api_id"`
+	CustomerID                int64      `json:"customer_id"`
+	InstrumentType            string     `json:"instrument_type"`
 	PaymentInstrument         struct {
 		Brand      string `json:"brand"`
 		LastDigits string `json:"last_digits"`

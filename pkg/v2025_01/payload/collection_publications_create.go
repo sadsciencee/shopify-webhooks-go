@@ -42,7 +42,7 @@ func (webhook *CollectionPublicationsCreate) GetData() (CollectionPublicationsCr
 type CollectionPublicationsCreatePayload struct {
 	CollectionID  int64       `json:"collection_id"`
 	CreatedAt     interface{} `json:"created_at"`
-	ID            string      `json:"id"`
+	ID            *int64      `json:"id"`
 	PublicationID interface{} `json:"publication_id"`
 	Published     bool        `json:"published"`
 	PublishedAt   time.Time   `json:"published_at"`

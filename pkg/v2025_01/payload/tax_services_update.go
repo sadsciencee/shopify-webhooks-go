@@ -39,8 +39,8 @@ func (webhook *TaxServicesUpdate) GetData() (TaxServicesUpdatePayload, error) {
 }
 
 type TaxServicesUpdatePayload struct {
-	Active bool   `json:"active"`
-	ID     string `json:"id"`
-	Name   string `json:"name"`
-	URL    string `json:"url"`
+	Active bool    `json:"active"`
+	ID     *string `json:"id"`
+	Name   string  `json:"name"`
+	URL    string  `json:"url"`
 }

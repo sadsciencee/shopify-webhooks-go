@@ -40,7 +40,7 @@ func (webhook *ProductPublicationsUpdate) GetData() (ProductPublicationsUpdatePa
 }
 
 type ProductPublicationsUpdatePayload struct {
-	CreatedAt     interface{} `json:"created_at"`
+	CreatedAt     *time.Time  `json:"created_at"`
 	ID            string      `json:"id"`
 	ProductID     int64       `json:"product_id"`
 	PublicationID interface{} `json:"publication_id"`

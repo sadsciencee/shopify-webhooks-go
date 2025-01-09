@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -41,7 +42,7 @@ func (webhook *FulfillmentEventsCreate) GetData() (FulfillmentEventsCreatePayloa
 
 type FulfillmentEventsCreatePayload struct {
 	Address1            interface{} `json:"address1"`
-	AdminGraphqlAPIID   string      `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID   shopify.ID  `json:"admin_graphql_api_id"`
 	City                interface{} `json:"city"`
 	Country             string      `json:"country"`
 	CreatedAt           time.Time   `json:"created_at"`

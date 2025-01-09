@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,6 +41,6 @@ func (webhook *DiscountsDelete) GetData() (DiscountsDeletePayload, error) {
 }
 
 type DiscountsDeletePayload struct {
-	AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-	DeletedAt         time.Time `json:"deleted_at"`
+	AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+	DeletedAt         time.Time  `json:"deleted_at"`
 }

@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -40,7 +41,7 @@ func (webhook *CustomersDelete) GetData() (CustomersDeletePayload, error) {
 
 type CustomersDeletePayload struct {
 	Addresses         []interface{} `json:"addresses"`
-	AdminGraphqlAPIID string        `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID    `json:"admin_graphql_api_id"`
 	ID                int64         `json:"id"`
 	Phone             interface{}   `json:"phone"`
 	TaxExemptions     []interface{} `json:"tax_exemptions"`

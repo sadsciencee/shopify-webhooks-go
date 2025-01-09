@@ -39,8 +39,8 @@ func (webhook *CustomerAccountSettingsUpdate) GetData() (CustomerAccountSettings
 }
 
 type CustomerAccountSettingsUpdatePayload struct {
-	CustomerAccountsVersion                  string      `json:"customer_accounts_version"`
-	LoginLinksVisibleOnStorefrontAndCheckout bool        `json:"login_links_visible_on_storefront_and_checkout"`
-	LoginRequiredAtCheckout                  bool        `json:"login_required_at_checkout"`
-	URL                                      interface{} `json:"url"`
+	CustomerAccountsVersion                  string  `json:"customer_accounts_version"`
+	LoginLinksVisibleOnStorefrontAndCheckout bool    `json:"login_links_visible_on_storefront_and_checkout"`
+	LoginRequiredAtCheckout                  bool    `json:"login_required_at_checkout"`
+	URL                                      *string `json:"url"`
 }

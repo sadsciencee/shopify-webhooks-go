@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,7 +40,7 @@ func (webhook *DeliveryPromiseSettingsUpdate) GetData() (DeliveryPromiseSettings
 }
 
 type DeliveryPromiseSettingsUpdatePayload struct {
-	DeliveryDatesEnabled bool   `json:"delivery_dates_enabled"`
-	ProcessingTime       string `json:"processing_time"`
-	ShopID               string `json:"shop_id"`
+	DeliveryDatesEnabled bool       `json:"delivery_dates_enabled"`
+	ProcessingTime       string     `json:"processing_time"`
+	ShopID               shopify.ID `json:"shop_id"`
 }

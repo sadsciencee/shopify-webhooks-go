@@ -41,7 +41,7 @@ func (webhook *SubscriptionContractsPause) GetData() (SubscriptionContractsPause
 
 type SubscriptionContractsPausePayload struct {
 	AdminGraphqlAPICustomerID    string                            `json:"admin_graphql_api_customer_id"`
-	AdminGraphqlAPIID            string                            `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID            shopify.ID                        `json:"admin_graphql_api_id"`
 	AdminGraphqlAPIOriginOrderID string                            `json:"admin_graphql_api_origin_order_id"`
 	BillingPolicy                shopify.SellingPlanBillingPolicy  `json:"billing_policy"`
 	CurrencyCode                 string                            `json:"currency_code"`

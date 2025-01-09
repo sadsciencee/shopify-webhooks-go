@@ -50,12 +50,12 @@ type VariantsOutOfStockPayload struct {
 	InventoryQuantity    int64       `json:"inventory_quantity"`
 	OldInventoryQuantity int64       `json:"old_inventory_quantity"`
 	Option1              string      `json:"option1"`
-	Option2              interface{} `json:"option2"`
-	Option3              interface{} `json:"option3"`
+	Option2              *string     `json:"option2"`
+	Option3              *string     `json:"option3"`
 	Position             int64       `json:"position"`
 	Price                string      `json:"price"`
 	ProductID            int64       `json:"product_id"`
-	Sku                  interface{} `json:"sku"`
+	Sku                  *string     `json:"sku"`
 	Taxable              bool        `json:"taxable"`
 	Title                string      `json:"title"`
 	UpdatedAt            time.Time   `json:"updated_at"`

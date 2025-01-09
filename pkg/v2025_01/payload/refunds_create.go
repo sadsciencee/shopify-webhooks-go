@@ -41,7 +41,7 @@ func (webhook *RefundsCreate) GetData() (RefundsCreatePayload, error) {
 }
 
 type RefundsCreatePayload struct {
-	AdminGraphqlAPIID string        `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID shopify.ID    `json:"admin_graphql_api_id"`
 	CreatedAt         time.Time     `json:"created_at"`
 	Duties            []interface{} `json:"duties"`
 	ID                int64         `json:"id"`
@@ -52,37 +52,33 @@ type RefundsCreatePayload struct {
 	RefundLineItems   []struct {
 		ID       int64 `json:"id"`
 		LineItem struct {
-			AdminGraphqlAPIID   string `json:"admin_graphql_api_id"`
-			DiscountAllocations []struct {
-				Amount                   string           `json:"amount"`
-				AmountSet                shopify.MoneyBag `json:"amount_set"`
-				DiscountApplicationIndex int64            `json:"discount_application_index"`
-			} `json:"discount_allocations"`
-			Duties                     []interface{}             `json:"duties"`
-			FulfillableQuantity        int64                     `json:"fulfillable_quantity"`
-			FulfillmentService         string                    `json:"fulfillment_service"`
-			FulfillmentStatus          interface{}               `json:"fulfillment_status"`
-			GiftCard                   bool                      `json:"gift_card"`
-			Grams                      int64                     `json:"grams"`
-			ID                         int64                     `json:"id"`
-			Name                       string                    `json:"name"`
-			Price                      string                    `json:"price"`
-			PriceSet                   shopify.MoneyBag          `json:"price_set"`
-			ProductExists              bool                      `json:"product_exists"`
-			ProductID                  int64                     `json:"product_id"`
-			Properties                 []interface{}             `json:"properties"`
-			Quantity                   int64                     `json:"quantity"`
-			RequiresShipping           bool                      `json:"requires_shipping"`
-			Sku                        string                    `json:"sku"`
-			TaxLines                   []shopify.LineItemTaxLine `json:"tax_lines"`
-			Taxable                    bool                      `json:"taxable"`
-			Title                      string                    `json:"title"`
-			TotalDiscount              string                    `json:"total_discount"`
-			TotalDiscountSet           shopify.MoneyBag          `json:"total_discount_set"`
-			VariantID                  int64                     `json:"variant_id"`
-			VariantInventoryManagement string                    `json:"variant_inventory_management"`
-			VariantTitle               interface{}               `json:"variant_title"`
-			Vendor                     interface{}               `json:"vendor"`
+			AdminGraphqlAPIID          string                       `json:"admin_graphql_api_id"`
+			DiscountAllocations        []shopify.DiscountAllocation `json:"discount_allocations"`
+			Duties                     []interface{}                `json:"duties"`
+			FulfillableQuantity        int64                        `json:"fulfillable_quantity"`
+			FulfillmentService         string                       `json:"fulfillment_service"`
+			FulfillmentStatus          interface{}                  `json:"fulfillment_status"`
+			GiftCard                   bool                         `json:"gift_card"`
+			Grams                      int64                        `json:"grams"`
+			ID                         int64                        `json:"id"`
+			Name                       string                       `json:"name"`
+			Price                      string                       `json:"price"`
+			PriceSet                   shopify.MoneyBag             `json:"price_set"`
+			ProductExists              bool                         `json:"product_exists"`
+			ProductID                  int64                        `json:"product_id"`
+			Properties                 []shopify.CustomAttribute    `json:"properties"`
+			Quantity                   int64                        `json:"quantity"`
+			RequiresShipping           bool                         `json:"requires_shipping"`
+			Sku                        string                       `json:"sku"`
+			TaxLines                   []shopify.LineItemTaxLine    `json:"tax_lines"`
+			Taxable                    bool                         `json:"taxable"`
+			Title                      string                       `json:"title"`
+			TotalDiscount              string                       `json:"total_discount"`
+			TotalDiscountSet           shopify.MoneyBag             `json:"total_discount_set"`
+			VariantID                  int64                        `json:"variant_id"`
+			VariantInventoryManagement string                       `json:"variant_inventory_management"`
+			VariantTitle               *string                      `json:"variant_title"`
+			Vendor                     *string                      `json:"vendor"`
 		} `json:"line_item"`
 		LineItemID  int64            `json:"line_item_id"`
 		LocationID  interface{}      `json:"location_id"`

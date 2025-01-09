@@ -39,5 +39,5 @@ func (webhook *ProductPublicationsDelete) GetData() (ProductPublicationsDeletePa
 }
 
 type ProductPublicationsDeletePayload struct {
-	ID string `json:"id"`
+	ID interface{} `json:"id"`
 }

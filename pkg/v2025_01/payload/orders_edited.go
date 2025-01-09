@@ -41,9 +41,9 @@ func (webhook *OrdersEdited) GetData() (OrdersEditedPayload, error) {
 
 type OrdersEditedPayload struct {
 	OrderEdit struct {
-		AppID       interface{} `json:"app_id"`
-		CommittedAt time.Time   `json:"committed_at"`
-		CreatedAt   time.Time   `json:"created_at"`
+		AppID       *int64    `json:"app_id"`
+		CommittedAt time.Time `json:"committed_at"`
+		CreatedAt   time.Time `json:"created_at"`
 		Discounts   struct {
 			LineItem struct {
 				Additions []interface{} `json:"additions"`

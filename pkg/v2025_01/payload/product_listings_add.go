@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -41,24 +42,18 @@ func (webhook *ProductListingsAdd) GetData() (ProductListingsAddPayload, error) 
 
 type ProductListingsAddPayload struct {
 	ProductListing struct {
-		Available bool          `json:"available"`
-		BodyHTML  string        `json:"body_html"`
-		CreatedAt time.Time     `json:"created_at"`
-		Handle    string        `json:"handle"`
-		Images    []interface{} `json:"images"`
-		Options   []struct {
-			ID        int64    `json:"id"`
-			Name      string   `json:"name"`
-			Position  int64    `json:"position"`
-			ProductID int64    `json:"product_id"`
-			Values    []string `json:"values"`
-		} `json:"options"`
-		ProductID   int64     `json:"product_id"`
-		ProductType string    `json:"product_type"`
-		PublishedAt time.Time `json:"published_at"`
-		Tags        string    `json:"tags"`
-		Title       string    `json:"title"`
-		UpdatedAt   time.Time `json:"updated_at"`
+		Available   bool                    `json:"available"`
+		BodyHTML    string                  `json:"body_html"`
+		CreatedAt   time.Time               `json:"created_at"`
+		Handle      string                  `json:"handle"`
+		Images      []interface{}           `json:"images"`
+		Options     []shopify.ProductOption `json:"options"`
+		ProductID   int64                   `json:"product_id"`
+		ProductType string                  `json:"product_type"`
+		PublishedAt time.Time               `json:"published_at"`
+		Tags        string                  `json:"tags"`
+		Title       string                  `json:"title"`
+		UpdatedAt   time.Time               `json:"updated_at"`
 		Variants    []struct {
 			Available           bool        `json:"available"`
 			Barcode             interface{} `json:"barcode"`

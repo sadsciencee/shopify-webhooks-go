@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -40,10 +41,7 @@ func (webhook *FulfillmentOrdersMerged) GetData() (FulfillmentOrdersMergedPayloa
 
 type FulfillmentOrdersMergedPayload struct {
 	FulfillmentOrderMerges struct {
-		FulfillmentOrder struct {
-			ID     string `json:"id"`
-			Status string `json:"status"`
-		} `json:"fulfillment_order"`
+		FulfillmentOrder shopify.FulfillmentOrder `json:"fulfillment_order"`
 	} `json:"fulfillment_order_merges"`
 	MergeIntents []struct {
 		FulfillmentOrderID        int64 `json:"fulfillment_order_id"`

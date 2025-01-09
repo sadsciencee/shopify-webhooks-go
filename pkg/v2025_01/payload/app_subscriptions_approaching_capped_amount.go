@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -41,13 +42,13 @@ func (webhook *AppSubscriptionsApproachingCappedAmount) GetData() (AppSubscripti
 
 type AppSubscriptionsApproachingCappedAmountPayload struct {
 	AppSubscription struct {
-		AdminGraphqlAPIID     string    `json:"admin_graphql_api_id"`
-		AdminGraphqlAPIShopID string    `json:"admin_graphql_api_shop_id"`
-		BalanceUsed           int64     `json:"balance_used"`
-		CappedAmount          string    `json:"capped_amount"`
-		CreatedAt             time.Time `json:"created_at"`
-		CurrencyCode          string    `json:"currency_code"`
-		Name                  string    `json:"name"`
-		UpdatedAt             time.Time `json:"updated_at"`
+		AdminGraphqlAPIID     shopify.ID `json:"admin_graphql_api_id"`
+		AdminGraphqlAPIShopID string     `json:"admin_graphql_api_shop_id"`
+		BalanceUsed           int64      `json:"balance_used"`
+		CappedAmount          string     `json:"capped_amount"`
+		CreatedAt             time.Time  `json:"created_at"`
+		CurrencyCode          string     `json:"currency_code"`
+		Name                  string     `json:"name"`
+		UpdatedAt             time.Time  `json:"updated_at"`
 	} `json:"app_subscription"`
 }

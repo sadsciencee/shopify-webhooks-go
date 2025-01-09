@@ -41,18 +41,18 @@ func (webhook *CompanyLocationsUpdate) GetData() (CompanyLocationsUpdatePayload,
 }
 
 type CompanyLocationsUpdatePayload struct {
-	AdminGraphqlAPIID            string           `json:"admin_graphql_api_id"`
+	AdminGraphqlAPIID            shopify.ID       `json:"admin_graphql_api_id"`
 	BillingAddress               *shopify.Address `json:"billing_address"`
 	BuyerExperienceConfiguration interface{}      `json:"buyer_experience_configuration"`
 	Company                      struct {
-		AdminGraphqlAPIID            string    `json:"admin_graphql_api_id"`
-		CreatedAt                    time.Time `json:"created_at"`
-		CustomerSince                string    `json:"customer_since"`
-		ExternalID                   string    `json:"external_id"`
-		MainContactAdminGraphqlAPIID string    `json:"main_contact_admin_graphql_api_id"`
-		Name                         string    `json:"name"`
-		Note                         string    `json:"note"`
-		UpdatedAt                    time.Time `json:"updated_at"`
+		AdminGraphqlAPIID            shopify.ID `json:"admin_graphql_api_id"`
+		CreatedAt                    time.Time  `json:"created_at"`
+		CustomerSince                string     `json:"customer_since"`
+		ExternalID                   string     `json:"external_id"`
+		MainContactAdminGraphqlAPIID shopify.ID `json:"main_contact_admin_graphql_api_id"`
+		Name                         string     `json:"name"`
+		Note                         string     `json:"note"`
+		UpdatedAt                    time.Time  `json:"updated_at"`
 	} `json:"company"`
 	CreatedAt       time.Time        `json:"created_at"`
 	ExternalID      string           `json:"external_id"`

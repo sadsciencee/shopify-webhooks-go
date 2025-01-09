@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 	"time"
 )
@@ -40,28 +41,28 @@ func (webhook *ProductsCreate) GetData() (ProductsCreatePayload, error) {
 }
 
 type ProductsCreatePayload struct {
-	AdminGraphqlAPIID                 string        `json:"admin_graphql_api_id"`
-	BodyHTML                          string        `json:"body_html"`
-	Category                          interface{}   `json:"category"`
-	CreatedAt                         time.Time     `json:"created_at"`
-	Handle                            string        `json:"handle"`
-	HasVariantsThatRequiresComponents bool          `json:"has_variants_that_requires_components"`
-	ID                                int64         `json:"id"`
-	Image                             interface{}   `json:"image"`
-	Images                            []interface{} `json:"images"`
-	Media                             []interface{} `json:"media"`
-	Options                           []interface{} `json:"options"`
-	ProductType                       string        `json:"product_type"`
-	PublishedAt                       time.Time     `json:"published_at"`
-	PublishedScope                    string        `json:"published_scope"`
-	Status                            string        `json:"status"`
-	Tags                              string        `json:"tags"`
-	TemplateSuffix                    interface{}   `json:"template_suffix"`
-	Title                             string        `json:"title"`
-	UpdatedAt                         time.Time     `json:"updated_at"`
+	AdminGraphqlAPIID                 string                  `json:"admin_graphql_api_id"`
+	BodyHTML                          string                  `json:"body_html"`
+	Category                          interface{}             `json:"category"`
+	CreatedAt                         time.Time               `json:"created_at"`
+	Handle                            string                  `json:"handle"`
+	HasVariantsThatRequiresComponents bool                    `json:"has_variants_that_requires_components"`
+	ID                                int64                   `json:"id"`
+	Image                             interface{}             `json:"image"`
+	Images                            []interface{}           `json:"images"`
+	Media                             []interface{}           `json:"media"`
+	Options                           []shopify.ProductOption `json:"options"`
+	ProductType                       string                  `json:"product_type"`
+	PublishedAt                       time.Time               `json:"published_at"`
+	PublishedScope                    string                  `json:"published_scope"`
+	Status                            string                  `json:"status"`
+	Tags                              string                  `json:"tags"`
+	TemplateSuffix                    interface{}             `json:"template_suffix"`
+	Title                             string                  `json:"title"`
+	UpdatedAt                         time.Time               `json:"updated_at"`
 	VariantGids                       []struct {
-		AdminGraphqlAPIID string    `json:"admin_graphql_api_id"`
-		UpdatedAt         time.Time `json:"updated_at"`
+		AdminGraphqlAPIID shopify.ID `json:"admin_graphql_api_id"`
+		UpdatedAt         time.Time  `json:"updated_at"`
 	} `json:"variant_gids"`
 	Variants []struct {
 		AdminGraphqlAPIID    string      `json:"admin_graphql_api_id"`

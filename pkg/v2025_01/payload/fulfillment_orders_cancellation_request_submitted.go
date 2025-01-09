@@ -3,6 +3,7 @@ package payload
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/sadsciencee/shopify-webhooks-go/pkg/v2025_01/shopify"
 	"github.com/sadsciencee/shopify-webhooks-go/pkg/webhook"
 )
 
@@ -39,11 +40,7 @@ func (webhook *FulfillmentOrdersCancellationRequestSubmitted) GetData() (Fulfill
 }
 
 type FulfillmentOrdersCancellationRequestSubmittedPayload struct {
-	FulfillmentOrder struct {
-		ID            string `json:"id"`
-		RequestStatus string `json:"request_status"`
-		Status        string `json:"status"`
-	} `json:"fulfillment_order"`
+	FulfillmentOrder                shopify.FulfillmentOrder `json:"fulfillment_order"`
 	FulfillmentOrderMerchantRequest struct {
 		ID      string `json:"id"`
 		Message string `json:"message"`
